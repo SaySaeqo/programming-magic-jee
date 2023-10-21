@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name = 'Sonatype Nexus Snapshots'
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+    }
+    dependencies {
+        classpath 'io.openliberty.tools:liberty-gradle-plugin:3.7'
+        classpath 'org.slf4j:slf4j-simple:2.0.7'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'war'
+}
+
+apply plugin: 'liberty'
+
+group 'pl.edu.pg.eti.kask.s180171'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+//    junitVersion = '5.9.2'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation('org.apache.groovy:groovy-all:4.0.10')
+//    implementation 'org.slf4j:slf4j-api:1.7.36'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
+    compileOnly('jakarta.platform:jakarta.jakartaee-web-api:10.0.0')
+
+    libertyRuntime 'io.openliberty:openliberty-webProfile10:+'
+
+    testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}

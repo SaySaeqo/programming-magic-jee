@@ -1,0 +1,26 @@
+### Programmers
+GET http://localhost:9080/programming-magic/programmers
+
+### Programmer
+GET http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+
+### Programmer - not existing
+GET http://localhost:9080/programming-magic/programmer/12345678-552d-4fc2-8e64-644044d1dcb9
+
+### Programmer's portrait
+GET http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+
+### Delete portrait
+DELETE http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+
+### Put portrait
+PUT http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+Content-Type: multipart/form-data; boundary=myboundary
+
+--myboundary
+Content-Disposition: form-data; name="portrait"; filename="shayne.png"
+
+< ./src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/shayne.png
+--myboundary--
+
+###
