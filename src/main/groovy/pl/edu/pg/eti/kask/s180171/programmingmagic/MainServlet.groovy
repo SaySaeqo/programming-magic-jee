@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic
 
+import jakarta.inject.Inject
 import jakarta.servlet.ServletException
 import jakarta.servlet.annotation.MultipartConfig
 import jakarta.servlet.annotation.WebServlet
@@ -24,12 +25,15 @@ class MainServlet extends HttpServlet {
 
     Logger log = LoggerFactory.getLogger(this.class.simpleName)
 
-    ProgrammerController programmerController;
+    @Inject
+    ProgrammerController programmerController
 
     void init() {
 
-        def dataStore = servletContext.getAttribute("datasource") as DataStore
-        programmerController = new ProgrammerController(new ProgrammerRepository(dataStore))
+//        def dataStore = servletContext.getAttribute("datasource") as DataStore
+//        def imagesPath = servletContext.getInitParameter("imagesPath") as String
+//        def fileSystemController = new FileSystemController(imagesPath)
+//        programmerController = new ProgrammerController(new ProgrammerRepository(dataStore, fileSystemController))
     }
 
     static class Patterns{
@@ -61,7 +65,8 @@ class MainServlet extends HttpServlet {
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     response.contentType = "image/png"
                     def uuid = UUID.fromString path.find(Patterns.UUID)
-                    def portrait = programmerController.getProgrammerPortrait(uuid)
+                    def programmer = programmerController.getProgrammer(uuid)
+                    def portrait = programmerController.getPortrait(programmer)
                     response.contentLength = portrait.length
                     response.outputStream.write portrait
                     break
@@ -84,8 +89,7 @@ class MainServlet extends HttpServlet {
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     def uuid = UUID.fromString path.find(Patterns.UUID)
                     def programmer = programmerController.getProgrammer(uuid)
-                    programmer.portrait = null
-                    programmerController.saveProgrammer(programmer)
+                    programmerController.deletePortrait(programmer)
                     break
                 default:
                     throw new UrlMappingNotFoundException(path, "DELETE")
@@ -106,8 +110,7 @@ class MainServlet extends HttpServlet {
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     def uuid = UUID.fromString path.find(Patterns.UUID)
                     def programmer = programmerController.getProgrammer(uuid)
-                    programmer.portrait = request.getPart("portrait").inputStream.readAllBytes()
-                    programmerController.saveProgrammer(programmer)
+                    programmerController.savePortrait(request.getPart("portrait").inputStream, programmer)
                     break
                 default:
                     throw new UrlMappingNotFoundException(path, "PUT")

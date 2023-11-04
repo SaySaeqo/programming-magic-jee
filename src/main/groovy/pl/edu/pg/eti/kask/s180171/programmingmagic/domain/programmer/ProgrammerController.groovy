@@ -1,13 +1,21 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
+import jakarta.enterprise.context.RequestScoped
+import jakarta.inject.Inject
 import jakarta.servlet.http.HttpServletResponse
 import jakarta.validation.constraints.NotNull
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
 import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.EntityNotFoundException
 
+@RequestScoped
 class ProgrammerController {
     ProgrammerRepository repository;
 
+    ProgrammerController(){
+
+    }
+
+    @Inject
     ProgrammerController(ProgrammerRepository repository){
         this.repository = repository;
     }
@@ -22,11 +30,7 @@ class ProgrammerController {
 
     Programmer saveProgrammer(@NotNull Programmer programmer){ repository.save(programmer)}
 
-    byte[] getProgrammerPortrait(UUID uuid){
-        def result = getProgrammer(uuid).portrait
-        if (result) return result
-        else throw new HttpRequestException(
-                HttpServletResponse.SC_NOT_FOUND,
-                "There is no portrait for programmer with uuid $uuid")
-    }
+    def getPortrait(Programmer forProgrammer) { repository.getPortrait(forProgrammer) }
+    void deletePortrait(Programmer forProgrammer){ repository.deletePortrait(forProgrammer)}
+    void savePortrait(InputStream inputStream, Programmer forProgrammer){ repository.savePortrait(inputStream,forProgrammer)}
 }

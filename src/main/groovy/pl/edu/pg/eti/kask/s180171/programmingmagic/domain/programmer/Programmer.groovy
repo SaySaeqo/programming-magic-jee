@@ -12,7 +12,6 @@ class Programmer extends BaseEntity{
     String title
     Date birthday
     ProgrammerLevel level
-    byte[] portrait
 
     List<Program> applications
 

@@ -3,13 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
-
-    <listener>
-        <listener-class>pl.edu.pg.eti.kask.s180171.programmingmagic.listener.CreateDataStore</listener-class>
-    </listener>
-
-    <listener>
-        <listener-class>pl.edu.pg.eti.kask.s180171.programmingmagic.listener.InitializeDataStore</listener-class>
-    </listener>
+    <context-param>
+        <param-name>imagesPath</param-name>
+        <param-value>C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\portraits</param-value>
+    </context-param>
 
 </web-app>
