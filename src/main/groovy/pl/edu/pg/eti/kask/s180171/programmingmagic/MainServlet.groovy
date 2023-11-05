@@ -7,14 +7,11 @@ import jakarta.servlet.annotation.WebServlet
 import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
-import jakarta.ws.rs.HttpMethod
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerController
+import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerService
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerDto
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerRepository
-import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.EntityNotFoundException
 import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.UrlMappingNotFoundException
 
 import java.util.regex.Pattern
@@ -25,8 +22,12 @@ class MainServlet extends HttpServlet {
 
     Logger log = LoggerFactory.getLogger(this.class.simpleName)
 
+    ProgrammerService programmerService
+
     @Inject
-    ProgrammerController programmerController
+    MainServlet(ProgrammerService programmerService){
+        this.programmerService = programmerService
+    }
 
     void init() {
 
@@ -54,19 +55,19 @@ class MainServlet extends HttpServlet {
             switch (path) {
                 case { it.matches(Patterns.PROGRAMMERS) }:
                     response.contentType = "application/json"
-                    response.writer.write ProgrammerDto.getStandardInfo(programmerController.programmers)
+                    response.writer.write ProgrammerDto.getStandardInfo(programmerService.getAll())
                     break
                 case { it.matches(Patterns.PROGRAMMER) }:
                     response.contentType = "application/json"
                     def uuid = UUID.fromString path.find(Patterns.UUID)
-                    def programmer = programmerController.getProgrammer(uuid)
+                    def programmer = programmerService.get(uuid)
                     response.writer.write ProgrammerDto.getStandardInfo(programmer)
                     break
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     response.contentType = "image/png"
                     def uuid = UUID.fromString path.find(Patterns.UUID)
-                    def programmer = programmerController.getProgrammer(uuid)
-                    def portrait = programmerController.getPortrait(programmer)
+                    def programmer = programmerService.get(uuid)
+                    def portrait = programmerService.getPortrait(programmer)
                     response.contentLength = portrait.length
                     response.outputStream.write portrait
                     break
@@ -88,8 +89,8 @@ class MainServlet extends HttpServlet {
             switch (path) {
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     def uuid = UUID.fromString path.find(Patterns.UUID)
-                    def programmer = programmerController.getProgrammer(uuid)
-                    programmerController.deletePortrait(programmer)
+                    def programmer = programmerService.get(uuid)
+                    programmerService.deletePortrait(programmer)
                     break
                 default:
                     throw new UrlMappingNotFoundException(path, "DELETE")
@@ -109,8 +110,8 @@ class MainServlet extends HttpServlet {
             switch (path) {
                 case { it.matches(Patterns.PROGRAMMER_PORTRAIT) }:
                     def uuid = UUID.fromString path.find(Patterns.UUID)
-                    def programmer = programmerController.getProgrammer(uuid)
-                    programmerController.savePortrait(request.getPart("portrait").inputStream, programmer)
+                    def programmer = programmerService.get(uuid)
+                    programmerService.savePortrait(request.getPart("portrait").inputStream, programmer)
                     break
                 default:
                     throw new UrlMappingNotFoundException(path, "PUT")

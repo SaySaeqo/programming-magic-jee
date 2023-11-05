@@ -2,7 +2,6 @@ package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
 import jakarta.enterprise.context.RequestScoped
 import jakarta.inject.Inject
-import jakarta.persistence.criteria.CriteriaBuilder
 import jakarta.servlet.http.HttpServletResponse
 import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
 import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
@@ -10,14 +9,11 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseRepository
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
 
 @RequestScoped
-class ProgrammerRepository extends BaseRepository<Programmer> {
+class ProgrammerRepository extends BaseRepository<Programmer>{
 
-    private FileSystemController fileSystemController
+    FileSystemController fileSystemController
 
-    ProgrammerRepository(){
-        super(null, Programmer.class)
-    }
-
+    ProgrammerRepository(){super()}
     @Inject
     ProgrammerRepository(DataStore dataStore, FileSystemController fileSystemController) {
         super(dataStore, Programmer.class)

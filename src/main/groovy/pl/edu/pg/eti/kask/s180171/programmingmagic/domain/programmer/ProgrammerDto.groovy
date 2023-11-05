@@ -1,18 +1,27 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
+import groovy.json.JsonGenerator
 import groovy.json.JsonOutput
 import groovy.transform.TupleConstructor
+import jakarta.json.stream.JsonGeneratorFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer as entityProgrammer
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.model.ProgrammerLevel
 
+import java.time.LocalDate
+
 class ProgrammerDto {
+
+    static generator = new JsonGenerator.Options().with {
+        addConverter(LocalDate){it.format("yyyy-MM-DD")}
+        build()
+    }
 
     @TupleConstructor
     static class Programmer{
         UUID uuid
         String name
         String title
-        Date birthday
+        LocalDate birthday
         ProgrammerLevel level
 
         Programmer(entityProgrammer other){
@@ -35,7 +44,7 @@ class ProgrammerDto {
         }
     }
 
-    static String getStandardInfo(entityProgrammer programmer){ JsonOutput.toJson new Programmer(programmer) }
-    static String getStandardInfo(List<entityProgrammer> programmers){ JsonOutput.toJson new Programmers(programmers)}
+    static String getStandardInfo(entityProgrammer programmer){ generator.toJson new Programmer(programmer) }
+    static String getStandardInfo(List<entityProgrammer> programmers){ generator.toJson new Programmers(programmers)}
 
 }

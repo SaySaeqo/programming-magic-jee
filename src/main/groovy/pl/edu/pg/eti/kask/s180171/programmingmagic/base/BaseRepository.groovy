@@ -5,15 +5,17 @@ import jakarta.validation.constraints.NotNull
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
 
 import java.lang.invoke.WrongMethodTypeException
 
-abstract class BaseRepository<T extends BaseEntity> {
+
+class BaseRepository<T extends BaseEntity>{
 
     Logger log = LoggerFactory.getLogger(this.class.simpleName)
     T entity
     DataStore dataStore
+
+    BaseRepository(){}
 
     BaseRepository(DataStore dataStore, Class<T> tClass){
         this.dataStore = dataStore
@@ -36,14 +38,14 @@ abstract class BaseRepository<T extends BaseEntity> {
         }
     }
 
-    HashSet<T> getTable(){ dataStore.getTable(entity.class) }
+    HashSet<T> getTable(){ dataStore.getCopyOfTable(entity.class) }
 
     List<T> findAll(){ table.toList() }
 
     T findByUUID(UUID uuid){ table.find {uuid == it.uuid} }
 
     T save(@NotNull T entity){
-        dataStore.saveEntity(entity)
+        dataStore.save(entity)
     }
 
 }

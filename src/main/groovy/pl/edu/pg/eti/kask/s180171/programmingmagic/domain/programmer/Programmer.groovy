@@ -5,12 +5,14 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseEntity
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.model.ProgrammerLevel
 
+import java.time.LocalDate
+
 @ToString
 class Programmer extends BaseEntity{
 
     String name
     String title
-    Date birthday
+    LocalDate birthday
     ProgrammerLevel level
 
     List<Program> applications

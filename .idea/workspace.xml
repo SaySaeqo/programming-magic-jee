@@ -5,26 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portraits/b36b52a6-552d-4fc2-8e64-644044d1dcb9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/FileSystemController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/MainServlet.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/MainServlet.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseRepository.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerRepository.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/listener/CreateDataStore.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/listener/InitializeDataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/listener/InitializeDataStore.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/liberty/config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/liberty/config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/InitializeDataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStoreInitializer.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +67,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -104,6 +86,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.programming-magic-4 [war]">
+    <configuration name="programming-magic-4 [cleanDirs]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="cleanDirs" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="programming-magic-4 [libertyDev]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -148,9 +152,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="requests | Delete portrait" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="5" requestIdentifier="Delete portrait" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="requests | Programmer's portrait" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="4" requestIdentifier="Programmer's portrait" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -160,10 +161,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.programming-magic-4 [war]" />
-        <item itemvalue="HTTP Request.requests | Programmer's portrait" />
         <item itemvalue="HTTP Request.requests | Programmers" />
         <item itemvalue="Gradle.programming-magic-4 [libertyDev]" />
-        <item itemvalue="HTTP Request.requests | Delete portrait" />
+        <item itemvalue="HTTP Request.requests | Programmer's portrait" />
+        <item itemvalue="Gradle.programming-magic-4 [cleanDirs]" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +186,9 @@
       <workItem from="1698147231576" duration="7224000" />
       <workItem from="1698755080341" duration="10374000" />
       <workItem from="1699129294187" duration="1963000" />
-      <workItem from="1699136523629" duration="2404000" />
+      <workItem from="1699136523629" duration="4656000" />
+      <workItem from="1699179622814" duration="5724000" />
+      <workItem from="1699185464110" duration="5251000" />
     </task>
     <task id="LOCAL-00001" summary="servlet">
       <option name="closed" value="true" />
@@ -195,7 +198,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697918434608</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cdi: 1. zadanie z powtarzającą się ścieżką w InitializeDataStore">
+      <option name="closed" value="true" />
+      <created>1699141195172</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699141195172</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cdi: 2. zadanie + jw.">
+      <option name="closed" value="true" />
+      <created>1699190531330</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699190531330</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +233,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="servlet" />
+    <MESSAGE value="cdi: 1. zadanie z powtarzającą się ścieżką w InitializeDataStore" />
+    <MESSAGE value="cdi: 2. zadanie + jw." />
+    <option name="LAST_COMMIT_MESSAGE" value="cdi: 2. zadanie + jw." />
   </component>
 </project>
