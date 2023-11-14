@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="uuid" value="#{programController.programUuid}"/>
+        <f:viewAction action="#{programController.initProgram()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <article>
+            <header>
+                <h1>Program full data</h1>
+            </header>
+            <section>
+                <div class="tableGrid">
+                    <div><h:outputText value="UUID: "/></div>
+                    <div><h:outputText value="#{programController.program.uuid}"/></div>
+                    <div><h:outputText value="Name: "/></div>
+                    <div><h:outputText value="#{programController.program.name}"/></div>
+                    <div><h:outputText value="Description: "/></div>
+                    <div><h:outputText value="#{programController.program.description}"/></div>
+                    <div><h:outputText value="Created: "/></div>
+                    <div><h:outputText value="#{programController.program.dateOfCreation}"/></div>
+                    <div><h:outputText value="UsedTechnology: "/></div>
+                    <div><h:outputText value="#{programController.program.usedTechnology ? programController.program.usedTechnology.name : '-'}"/></div>
+                    <div><h:outputText value="Code: "/></div>
+                    <div style="display: flex"><h:outputText value="#{programController.program.code}" styleClass="code"/></div>
+                </div>
+            </section>
+        </article>
+    </ui:define>
+</ui:composition>

@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
+import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
 
 import java.lang.invoke.WrongMethodTypeException
 
@@ -28,10 +29,7 @@ class BaseRepository<T extends BaseEntity>{
             if (baseEntity.properties.containsKey(key)) return
             def methodName = "findBy${key.toString().capitalize()}"
             Closure<List<T>> method = { criteria ->
-                if (criteria.class != value.class) throw new WrongMethodTypeException(
-                        "Method $methodName from ${this.class.name} expect argument type of $value.class" +
-                                " instead of $criteria.class.simpleName")
-                table.findAll {it."$key" == criteria}.asList()
+                table.findAll{it."$key" == criteria}.asList()
             }
 
             this.metaClass."$methodName" = method
@@ -46,6 +44,21 @@ class BaseRepository<T extends BaseEntity>{
 
     T save(@NotNull T entity){
         dataStore.save(entity)
+    }
+
+    void delete(@NotNull T entity){
+        dataStore.removeByUuid(entity)
+    }
+
+    void cascadeDelete(@NotNull T entity){
+        dataStore.cascadeRemoveByUuid(entity)
+    }
+
+    <K extends BaseEntity> void linkToList(Class<K> clazz, String fieldName, T entity){
+        def list = dataStore.getCopyOfTable(clazz).findAll{
+            it.properties.find{_, value -> value == entity}
+        }.asList()
+        entity.setProperty(fieldName, list)
     }
 
 }

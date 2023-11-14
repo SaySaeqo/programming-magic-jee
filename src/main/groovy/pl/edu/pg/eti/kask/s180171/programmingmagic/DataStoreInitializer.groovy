@@ -6,10 +6,12 @@ import jakarta.enterprise.context.Initialized
 import jakarta.enterprise.context.control.RequestContextController
 import jakarta.enterprise.event.Observes
 import jakarta.inject.Inject
+import jakarta.servlet.http.HttpServletRequest
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
 import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
+import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.ProgramService
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
@@ -62,15 +64,6 @@ class DataStoreInitializer {
         final projectDir = "C:/Users/SaySaeqo/IdeaProjects/programming-magic-4"
         final testSubDir = "src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait"
         final fullPath = Paths.get (projectDir,testSubDir).toString()
-        final portrait = new FileSystemController().with {
-            dirPath = fullPath
-            load("andrzej.png")
-        }
-
-        new FileSystemController().with {
-            dirPath = Paths.get(projectDir, "portraits").toString()
-            save(portrait, testUUID.toString() + ".png")
-        }
 
         programmerService.with {
             save new Programmer(
@@ -86,12 +79,12 @@ class DataStoreInitializer {
                     level: ProgrammerLevel.ROOKIE,
             )
             save new Programmer(
-                    name: "Cezary",
+                    name: "Ania",
                     birthday: LocalDate.of(1997, 1, 1),
                     level: ProgrammerLevel.MASTER,
             )
             save new Programmer(
-                    name: "Dariusz",
+                    name: "Karolina",
                     birthday: LocalDate.of(1996, 1, 1),
                     level: ProgrammerLevel.SENIOR,
             )
@@ -101,6 +94,32 @@ class DataStoreInitializer {
                     level: ProgrammerLevel.SCHOLAR,
             )
 
+        }
+
+        Map<UUID, byte[]> portraits = [:]
+        // iterate throuth all files in directory
+        new File(fullPath).eachFile { file ->
+
+            def fileName = file.name
+            def fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1)
+            if (fileExtension != "png") return
+            def fileContent = file.bytes
+
+            def fileNameWithoutExtension = fileName.substring(0, fileName.lastIndexOf('.'))
+            String programmerName = fileNameWithoutExtension.capitalize()
+            try {
+                def programmerUuid = programmerService.getByName(programmerName).uuid
+                portraits.put programmerUuid, fileContent
+            } catch (HttpRequestException ignored) {
+                log.error "Programmer with name $programmerName not found"
+                return
+            }
+        }
+        new FileSystemController().with {
+            dirPath = Paths.get(projectDir, "portraits").toString()
+            portraits.each { uuid, portrait ->
+                save portrait, uuid.toString() + ".png"
+            }
         }
 
         programService.with {
@@ -139,7 +158,7 @@ class DataStoreInitializer {
                     description: "Gra w tetrisa",
                     code: "...",
                     dateOfCreation: LocalDate.of(2021, 1, 4),
-                    author: programmerService.get(testUUID),
+                    author: programmerService.get(programmerService.getByName("Bartek").uuid),
             )
         }
 

@@ -7,6 +7,7 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
 import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseRepository
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
+import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
 
 @RequestScoped
 class ProgrammerRepository extends BaseRepository<Programmer>{

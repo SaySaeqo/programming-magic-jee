@@ -1,20 +1,20 @@
 ### Programmers
-GET http://localhost:9080/programming-magic/programmers
+GET http://localhost:9080/programming-magic/api/programmers
 
 ### Programmer
-GET http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
 
 ### Programmer - not existing
-GET http://localhost:9080/programming-magic/programmer/12345678-552d-4fc2-8e64-644044d1dcb9
+GET http://localhost:9080/programming-magic/api/programmer/12345678-552d-4fc2-8e64-644044d1dcb9
 
 ### Programmer's portrait
-GET http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
 
 ### Delete portrait
-DELETE http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+DELETE http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
 
 ### Put portrait
-PUT http://localhost:9080/programming-magic/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+PUT http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
 Content-Type: multipart/form-data; boundary=myboundary
 
 --myboundary

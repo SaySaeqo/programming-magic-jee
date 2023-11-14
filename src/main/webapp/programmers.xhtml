@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <ui:define name="content">
+        <article>
+            <header>
+                <h1>List of programmers</h1>
+            </header>
+            <section>
+                <h:dataTable value="#{programmerController.getProgrammers()}" var="programmer"
+                             styleClass="tableList align-middle mb-0 bg-white" headerClass="bg-light">
+                    <h:column>
+                        <f:facet name="header">Portrait</f:facet>
+                        <h:graphicImage styleClass="portrait" alt="Programmer portrait"
+                                        value="/api/programmer/#{programmer.uuid}/portrait"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{programmer.name}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Programs</f:facet>
+                        <h:link outcome="/programs.xhtml" value="See all">
+                            <f:param name="author" value="#{programmer.uuid}"/>
+                        </h:link>
+                    </h:column>
+
+                    <!--                    <h:column>-->
+                    <!--                        <f:facet name="header">Edit</f:facet>-->
+                    <!--                        <h:link outcome="/character/character_edit.xhtml" value="Edit">-->
+                    <!--                            <f:param name="id" value="#{programmer.id}"/>-->
+<!--                        </h:link>-->
+<!--                    </h:column>-->
+
+                    <h:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:form>
+                            <h:commandButton styleClass="btn" value="Delete"
+                                             action="#{programmerController.delete(programmer)}"/>
+                        </h:form>
+                    </h:column>
+
+                    <f:facet name="footer">
+                        <h:button styleClass="btn" outcome="programmers.xhtml"
+                                  value="Add new programmer"/>
+                    </f:facet>
+                </h:dataTable>
+            </section>
+        </article>
+    </ui:define>
+</ui:composition>

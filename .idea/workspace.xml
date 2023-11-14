@@ -5,8 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseEntityConverter.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/UuidConverter.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerConverter.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgramController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgrammerController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/ania.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/bartek.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/edward.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/karolina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/sass/main.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/main.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/program.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/program_create.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/programmers.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/programs.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/default/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/default/img/webicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/InitializeDataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStoreInitializer.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests.http" beforeDir="false" afterPath="$PROJECT_DIR$/requests.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStoreInitializer.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStoreInitializer.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/MainServlet.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/MainServlet.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseEntity.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseEntity.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseRepository.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/BaseService.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/program/Program.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/program/Program.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerRepository.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerRepository.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerService.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/exception/EntityNotFoundException.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/exception/EntityNotFoundException.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/liberty/config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/liberty/config/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/groovy/ProgrammerSpec.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/groovy/ProgrammerSpec.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +71,16 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="SCSS File" />
+        <option value="jsf" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -54,12 +98,14 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SaySaeqo/IdeaProjects/programming-magic-4/portraits&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SaySaeqo/IdeaProjects/programming-magic-4/src/main/webapp&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -73,20 +119,23 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\portraits" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp\resources\default\img" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\groovy\pl\edu\pg\eti\kask\s180171\programmingmagic\domain\" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\resources\pl\edu\pg\eti\kask\s180171\programmingmagic\portrait" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="pl.edu.pg.eti.kask.s180171.programmingmagic" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.programming-magic-4 [war]">
-    <configuration name="programming-magic-4 [cleanDirs]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="programming-magic-4 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +146,51 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="cleanDirs" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="programming-magic-4 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="programming-magic-4 [compileSass]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileSass" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -152,19 +245,13 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="requests | Programmer's portrait" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="4" requestIdentifier="Programmer's portrait" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="requests | Programmers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" requestIdentifier="Programmers" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.programming-magic-4 [war]" />
-        <item itemvalue="HTTP Request.requests | Programmers" />
         <item itemvalue="Gradle.programming-magic-4 [libertyDev]" />
-        <item itemvalue="HTTP Request.requests | Programmer's portrait" />
-        <item itemvalue="Gradle.programming-magic-4 [cleanDirs]" />
+        <item itemvalue="Gradle.programming-magic-4 [build]" />
+        <item itemvalue="Gradle.programming-magic-4 [clean]" />
+        <item itemvalue="Gradle.programming-magic-4 [compileSass]" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +275,12 @@
       <workItem from="1699129294187" duration="1963000" />
       <workItem from="1699136523629" duration="4656000" />
       <workItem from="1699179622814" duration="5724000" />
-      <workItem from="1699185464110" duration="5251000" />
+      <workItem from="1699185464110" duration="5999000" />
+      <workItem from="1699215395855" duration="1726000" />
+      <workItem from="1699359675337" duration="9700000" />
+      <workItem from="1699600336754" duration="37040000" />
+      <workItem from="1699796645914" duration="8464000" />
+      <workItem from="1699964404273" duration="1864000" />
     </task>
     <task id="LOCAL-00001" summary="servlet">
       <option name="closed" value="true" />
@@ -214,7 +306,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699190531330</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cdi: 2. zadanie + jw.">
+      <option name="closed" value="true" />
+      <created>1699190744338</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699190744338</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cdi: 2. zadanie + jw.">
+      <option name="closed" value="true" />
+      <created>1699360151963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699360151964</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cdi: 2. zadanie + jw.">
+      <option name="closed" value="true" />
+      <created>1699360658167</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699360658167</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

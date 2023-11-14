@@ -25,6 +25,10 @@ class DataStore {
         tables.get(clazz) ?: addTable(clazz)
     }
 
+    synchronized <T extends BaseEntity> T get(@NotNull T entity){
+        getTable(entity.class as Class<T>).find{it.uuid == entity.uuid}
+    }
+
     synchronized <T extends BaseEntity> HashSet<T> getCopyOfTable(Class<T> clazz){
         getTable(clazz).collect {it.clone()}
     }
@@ -33,10 +37,38 @@ class DataStore {
         tables.get(entity.class)?.removeIf {it.uuid == entity.uuid}
     }
 
-    synchronized <T extends BaseEntity> T save(@NotNull T entity){
+    // Entity must be linked before for cascade to work
+    synchronized <T extends BaseEntity> void cascadeRemoveByUuid(@NotNull T entity){
+        if (tables.get(entity.class)?.contains(entity)){
+            entity.properties.each{_, value ->
+                if (value instanceof List){
+                    value.each{
+                        cascadeRemoveByUuid(it)
+                    }
+                }
+            }
+        }
         removeByUuid(entity)
-        getTable(entity.class as Class<T>).add(entity)
-        entity
+    }
+
+    synchronized <T extends BaseEntity> T save(@NotNull T entity){
+        // todo: zamienic na findAll
+        // make sure all nested entities are saved and linked to this entity
+        entity.properties.each{
+            if (it.value instanceof BaseEntity){
+                entity."$it.key" = get(save(it.value))
+            }
+        }
+
+        // modify or create
+        T existingEntity = get(entity)
+        existingEntity?.properties?.each{
+                if(it.value != entity."$it.key"){
+                    existingEntity."$it.key" = entity."$it.key"
+                }
+        } ?: getTable(entity.class as Class<T>) << entity
+
+        entity.clone() as T
     }
 
 

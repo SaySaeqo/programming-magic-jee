@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:f="jakarta.faces.core">
+<f:view>
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="Programming magic fanstaty concept web application"/>
+        <meta name="keywords" content="programming magic"/>
+        <meta name="author" content="Tomasz Piwowski"/>
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+        <title>Programming magic</title>
+
+        <h:outputStylesheet library="default" name="css/main.css"/>
+        <h:outputStylesheet library="generated" name="css/main.css"/>
+    </h:head>
+
+    <h:body>
+        <header>
+            <h:graphicImage library="default" name="img/webicon.png" alt="Programming Magic Icon"/>
+            <div class="webtitle">Programming Magic</div>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <h:link outcome="/index.xhtml">Home</h:link>
+                </li>
+                <li>
+                    <h:link outcome="/programmers.xhtml">Programmers</h:link>
+                </li>
+                <li>
+                    <h:link outcome="/programs.xhtml">Programs</h:link>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <ui:insert name="content"/>
+        </main>
+
+        <footer>
+            <div>Copyright &#169; 2023, Tomasz Piwowski</div>
+        </footer>
+    </h:body>
+</f:view>
+</html>

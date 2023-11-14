@@ -1,0 +1,104 @@
+$main : #F0FFFFFF;
+$darker : #d0e8e8;
+$lighter : #00FFFFFF;
+
+html, body{
+  background: $main;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  font-family: Arial, ui-serif;
+  margin: 0;
+
+  >header, >nav, >footer{
+    display: flex;
+    align-items: center;
+    background: white
+
+  }
+
+  >header {
+    .webtitle {
+        flex: 1;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    img{
+      width: 3em;
+      padding: 0 1.5em;
+    }
+  }
+
+  >nav{
+    display: flex;
+    ul{
+      display: flex;
+      flex: 1;
+      list-style: none;
+      margin: 0 1.5em;
+      padding: 0;
+    }
+    li {
+      display: flex;
+    }
+    a {
+      text-decoration: none;
+      padding: 0 3em;
+      flex: 1;
+    }
+    li:hover{
+      background: $lighter;
+    }
+
+  }
+
+  >main{
+    flex: 1;
+    flex-direction: column;
+
+    article, header, section{
+      padding: 0 2em;
+      border: 0.1em solid black;
+      border-radius: 4em;
+    }
+
+    section{
+      padding: 1em 2em;
+    }
+
+  }
+
+  >footer{
+    justify-content: center;
+  }
+
+}
+
+img.portrait{
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  object-position: top;
+  object-fit: cover;
+}
+
+.code{
+  background: $darker;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-family: monospace;
+  white-space: pre;
+}
+
+.tableList{
+  td,th {
+    padding: 0.5em;
+  }
+}
+
+.tableGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+

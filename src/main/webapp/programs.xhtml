@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:ui="jakarta.faces.facelets"
+                xmlns:f="jakarta.faces.core"
+                template="/WEB-INF/template/main.xhtml">
+
+    <f:metadata>
+        <f:viewParam name="author" value="#{programController.programmerUuid}"/>
+        <f:viewAction action="#{programController.initProgrammer()}"/>
+    </f:metadata>
+
+    <ui:define name="content">
+        <article>
+            <header>
+                <h1>List of programs</h1>
+            </header>
+            <section>
+                <h:panelGroup layout="block" styleClass="tableGrid" rendered="#{programController.programmerUuid != null}">
+                    <div><h:outputText value="UUID: "/></div>
+                    <div><h:outputText value="#{programController.programmer.uuid}"/></div>
+                    <div><h:outputText value="Name: "/></div>
+                    <div><h:outputText value="#{programController.programmer.name}"/></div>
+                    <div><h:outputText value="Title: "/></div>
+                    <div><h:outputText value="#{programController.programmer.title}"/></div>
+                    <div><h:outputText value="Age: "/></div>
+                    <div><h:outputText value="#{programController.programmer.getAge()}"/></div>
+                    <div><h:outputText value="Level: "/></div>
+                    <div><h:outputText value="#{programController.programmer.level}"/></div>
+                </h:panelGroup>
+
+                <h:dataTable value="#{programController.getPrograms()}" var="program"
+                             styleClass="tableList" headerClass="bg-light">
+
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{program.name}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Author</f:facet>
+                        <h:outputText value="#{program.author.name}"/>
+                    </h:column>
+
+
+                    <h:column>
+                        <f:facet name="header">Code</f:facet>
+                        <div class="code">
+                            <h:outputText value="#{program.code}"/>
+                        </div>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">View</f:facet>
+                        <h:link outcome="/program.xhtml" value="View">
+                            <f:param name="uuid" value="#{program.uuid}"/>
+                        </h:link>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Edit</f:facet>
+                        <h:link outcome="program_create.xhtml" value="Edit">
+                            <f:param name="programUuid" value="#{program.uuid}"/>
+                            <f:param name="programmerUuid" value="#{program.author.uuid}"/>
+                        </h:link>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Delete</f:facet>
+                        <h:form>
+                            <h:commandButton styleClass="btn" value="Delete"
+                                             action="#{programController.delete(program)}"/>
+                        </h:form>
+                    </h:column>
+
+                    <f:facet name="footer">
+                        <h:button styleClass="btn" outcome="program_create.xhtml"
+                                  value="Add new program">
+                            <f:param name="programmerUuid" value="#{programController.programmerUuid}"/>
+                        </h:button>
+                    </f:facet>
+                </h:dataTable>
+            </section>
+        </article>
+    </ui:define>
+</ui:composition>

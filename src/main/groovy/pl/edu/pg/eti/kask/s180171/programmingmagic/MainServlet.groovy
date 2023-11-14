@@ -16,7 +16,7 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.UrlMappingNotFoundE
 
 import java.util.regex.Pattern
 
-@WebServlet(urlPatterns = "/*")
+@WebServlet(urlPatterns = "/api/*")
 @MultipartConfig(maxFileSize = 100_000) // 250*400
 class MainServlet extends HttpServlet {
 

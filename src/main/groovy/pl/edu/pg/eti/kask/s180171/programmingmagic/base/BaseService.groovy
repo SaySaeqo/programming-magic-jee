@@ -3,7 +3,7 @@ package pl.edu.pg.eti.kask.s180171.programmingmagic.base
 import jakarta.validation.constraints.NotNull
 import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.EntityNotFoundException
 
-class BaseService<R extends BaseRepository<T>, T extends BaseEntity>{
+class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements Serializable{
 
     R repository
 
@@ -19,12 +19,12 @@ class BaseService<R extends BaseRepository<T>, T extends BaseEntity>{
         result
     }
 
-    List<T> getAll(){
-        repository.findAll()
-    }
+    List<T> getAll(){ repository.findAll() }
+    T save(@NotNull T entity){ repository.save(entity) }
+    void delete(@NotNull T entity){ repository.delete(entity) }
 
-    T save(@NotNull T entity){
-        repository.save(entity)
+    void cascadeDelete(T entity){
+        repository.cascadeDelete(entity)
     }
 
 
