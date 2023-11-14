@@ -1,5 +1,5 @@
 ### Programmers
-GET http://localhost:9080/programming-magic/api/programmers
+GET http://localhost:9080/programming-magic/api/programmer
 
 ### Programmer
 GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
@@ -23,4 +23,64 @@ Content-Disposition: form-data; name="portrait"; filename="shayne.png"
 < ./src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait/shayne.png
 --myboundary--
 
-###
+### Add programmer
+POST http://localhost:9080/programming-magic/api/programmer
+Content-Type: application/json
+
+{
+  "name": "Shayne",
+  "title": "Shayne Topp",
+  "birthday": "1991-09-14",
+  "level": "JUNIOR"
+}
+
+### Update programmer
+PATCH http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+Content-Type: application/json
+
+{
+  "name": "Shayne",
+  "title": "GOLLLLIIATHH",
+  "birthday": "1991-09-14",
+  "level": "MASTER"
+}
+
+### Delete programmer
+DELETE http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+
+### Add programmer's program
+
+POST http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/program
+Content-Type: application/json
+
+{
+  "name": "testowy program",
+  "description": "testowy opis",
+  "code": "testowy kod",
+  "dateOfCreation": "2019-01-01"
+}
+
+### Programmer's programs
+GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/program
+
+### Programmer's program
+GET http://localhost:9080/programming-magic/api/program/todochange
+
+### Update programmer's program
+
+PATCH http://localhost:9080/programming-magic/api/program/todochange
+Content-Type: application/json
+
+{
+  "name": "testowy AAAAAAm",
+  "description": "tAAAA opis",
+  "code": "tesBBBBBBBC+++od",
+  "dateOfCreation": "2019-01-01"
+}
+
+### Delete programmer's program
+
+DELETE http://localhost:9080/programming-magic/api/program/todochange
+
+### All programs
+GET http://localhost:9080/programming-magic/api/program

@@ -19,9 +19,9 @@ class Programmer extends BaseEntity{
 
     List<Program> applications
 
-    int getAge(){
-        if (birthday == null) return null
-        LocalDate.now().year - birthday.year
-    }
+//    int getAge(){
+//        if (birthday == null) return null
+//        LocalDate.now().year - birthday.year
+//    }
 
 }

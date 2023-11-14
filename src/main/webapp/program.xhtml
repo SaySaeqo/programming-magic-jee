@@ -6,8 +6,8 @@
                 template="/WEB-INF/template/main.xhtml">
 
     <f:metadata>
-        <f:viewParam name="uuid" value="#{programController.programUuid}"/>
-        <f:viewAction action="#{programController.initProgram()}"/>
+        <f:viewParam name="uuid" value="#{programViewController.programUuid}"/>
+        <f:viewAction action="#{programViewController.initProgram()}"/>
     </f:metadata>
 
     <ui:define name="content">
@@ -18,17 +18,17 @@
             <section>
                 <div class="tableGrid">
                     <div><h:outputText value="UUID: "/></div>
-                    <div><h:outputText value="#{programController.program.uuid}"/></div>
+                    <div><h:outputText value="#{programViewController.program.uuid}"/></div>
                     <div><h:outputText value="Name: "/></div>
-                    <div><h:outputText value="#{programController.program.name}"/></div>
+                    <div><h:outputText value="#{programViewController.program.name}"/></div>
                     <div><h:outputText value="Description: "/></div>
-                    <div><h:outputText value="#{programController.program.description}"/></div>
+                    <div><h:outputText value="#{programViewController.program.description}"/></div>
                     <div><h:outputText value="Created: "/></div>
-                    <div><h:outputText value="#{programController.program.dateOfCreation}"/></div>
+                    <div><h:outputText value="#{programViewController.program.dateOfCreation}"/></div>
                     <div><h:outputText value="UsedTechnology: "/></div>
-                    <div><h:outputText value="#{programController.program.usedTechnology ? programController.program.usedTechnology.name : '-'}"/></div>
+                    <div><h:outputText value="#{programViewController.program.usedTechnology ? programViewController.program.usedTechnology.name : '-'}"/></div>
                     <div><h:outputText value="Code: "/></div>
-                    <div style="display: flex"><h:outputText value="#{programController.program.code}" styleClass="code"/></div>
+                    <div style="display: flex"><h:outputText value="#{programViewController.program.code}" styleClass="code"/></div>
                 </div>
             </section>
         </article>

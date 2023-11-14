@@ -6,37 +6,37 @@
                 template="/WEB-INF/template/main.xhtml">
 
     <f:metadata>
-        <f:viewParam name="programmerUuid" value="#{programController.programmerUuid}"/>
-        <f:viewParam name="programUuid" value="#{programController.programUuid}"/>
-        <f:viewAction action="#{programController.initProgram()}"/>
+        <f:viewParam name="programmerUuid" value="#{programViewController.programmerUuid}"/>
+        <f:viewParam name="programUuid" value="#{programViewController.programUuid}"/>
+        <f:viewAction action="#{programViewController.initProgram()}"/>
     </f:metadata>
 
     <ui:define name="content">
         <article>
             <header>
                 <h1>
-                    <h:outputText rendered="#{programController.programUuid != null}"
-                                  value="Edit the program #{programController.program.name}"/>
-                    <h:outputText rendered="#{programController.programUuid == null}"
-                                  value="Create a new program with uuid #{programController.program.uuid}"/>
+                    <h:outputText rendered="#{programViewController.programUuid != null}"
+                                  value="Edit the program #{programViewController.program.name}"/>
+                    <h:outputText rendered="#{programViewController.programUuid == null}"
+                                  value="Create a new program with uuid #{programViewController.program.uuid}"/>
                 </h1>
             </header>
             <section>
                 <h:form styleClass="tableGrid">
                     <h:outputLabel for="name" value="Name:"/>
-                    <h:inputText id="name" value="#{programController.program.name}"/>
+                    <h:inputText id="name" value="#{programViewController.program.name}"/>
                     <h:outputLabel for="description" value="Description:"/>
-                    <h:inputText id="description" value="#{programController.program.description}"/>
+                    <h:inputText id="description" value="#{programViewController.program.description}"/>
                     <h:outputLabel for="code" value="Code:"/>
-                    <h:inputTextarea id="code" value="#{programController.program.code}" style="resize: vertical"/>
+                    <h:inputTextarea id="code" value="#{programViewController.program.code}" style="resize: vertical"/>
                     <h:outputLabel for="author" value="Author:"/>
-                    <h:selectOneMenu id="author" value="#{programController.programmerUuid}">
-                        <f:selectItems value="#{programmerController.getProgrammers()}" var="programmer"
+                    <h:selectOneMenu id="author" value="#{programViewController.programmerUuid}">
+                        <f:selectItems value="#{programmerViewController.getProgrammers()}" var="programmer"
                                        itemValue="#{programmer.uuid}"
                                        itemLabel="#{programmer.name}" />
                     </h:selectOneMenu>
-                    <h:commandButton value="Save" action="#{programController.save()}"/>
-                    <h:commandButton value="Cancel" action="#{programController.cancel()}"/>
+                    <h:commandButton value="Save" action="#{programViewController.save()}"/>
+                    <h:commandButton value="Cancel" action="#{programViewController.cancel()}"/>
                 </h:form>
             </section>
         </article>

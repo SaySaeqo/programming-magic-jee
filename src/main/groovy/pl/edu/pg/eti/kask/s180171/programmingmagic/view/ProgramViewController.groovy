@@ -13,7 +13,7 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerS
 
 @RequestScoped
 @Named
-class ProgramController implements Serializable{
+class ProgramViewController implements Serializable{
 
     Logger log = LoggerFactory.getLogger(this.class.simpleName)
 
@@ -26,7 +26,7 @@ class ProgramController implements Serializable{
     Programmer programmer
 
     @Inject
-    ProgramController(ProgramService service, ProgrammerService programmerService) {
+    ProgramViewController(ProgramService service, ProgrammerService programmerService) {
         this.service = service
         this.programmerService = programmerService
     }

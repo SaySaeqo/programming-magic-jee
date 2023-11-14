@@ -52,19 +52,18 @@ class DataStore {
     }
 
     synchronized <T extends BaseEntity> T save(@NotNull T entity){
-        // todo: zamienic na findAll
         // make sure all nested entities are saved and linked to this entity
-        entity.properties.each{
-            if (it.value instanceof BaseEntity){
-                entity."$it.key" = get(save(it.value))
+        entity.properties.each{key, value ->
+            if (value instanceof BaseEntity){
+                entity."$key" = get(save(value))
             }
         }
 
         // modify or create
         T existingEntity = get(entity)
-        existingEntity?.properties?.each{
-                if(it.value != entity."$it.key"){
-                    existingEntity."$it.key" = entity."$it.key"
+        existingEntity?.properties?.each{key, value ->
+                if(value != entity."$key"){
+                    existingEntity."$key" = entity."$key"
                 }
         } ?: getTable(entity.class as Class<T>) << entity
 

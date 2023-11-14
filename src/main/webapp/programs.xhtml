@@ -6,8 +6,8 @@
                 template="/WEB-INF/template/main.xhtml">
 
     <f:metadata>
-        <f:viewParam name="author" value="#{programController.programmerUuid}"/>
-        <f:viewAction action="#{programController.initProgrammer()}"/>
+        <f:viewParam name="author" value="#{programViewController.programmerUuid}"/>
+        <f:viewAction action="#{programViewController.initProgrammer()}"/>
     </f:metadata>
 
     <ui:define name="content">
@@ -16,20 +16,20 @@
                 <h1>List of programs</h1>
             </header>
             <section>
-                <h:panelGroup layout="block" styleClass="tableGrid" rendered="#{programController.programmerUuid != null}">
+                <h:panelGroup layout="block" styleClass="tableGrid" rendered="#{programViewController.programmerUuid != null}">
                     <div><h:outputText value="UUID: "/></div>
-                    <div><h:outputText value="#{programController.programmer.uuid}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.uuid}"/></div>
                     <div><h:outputText value="Name: "/></div>
-                    <div><h:outputText value="#{programController.programmer.name}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.name}"/></div>
                     <div><h:outputText value="Title: "/></div>
-                    <div><h:outputText value="#{programController.programmer.title}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.title}"/></div>
                     <div><h:outputText value="Age: "/></div>
-                    <div><h:outputText value="#{programController.programmer.getAge()}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.getAge()}"/></div>
                     <div><h:outputText value="Level: "/></div>
-                    <div><h:outputText value="#{programController.programmer.level}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.level}"/></div>
                 </h:panelGroup>
 
-                <h:dataTable value="#{programController.getPrograms()}" var="program"
+                <h:dataTable value="#{programViewController.getPrograms()}" var="program"
                              styleClass="tableList" headerClass="bg-light">
 
                     <h:column>
@@ -69,14 +69,14 @@
                         <f:facet name="header">Delete</f:facet>
                         <h:form>
                             <h:commandButton styleClass="btn" value="Delete"
-                                             action="#{programController.delete(program)}"/>
+                                             action="#{programViewController.delete(program)}"/>
                         </h:form>
                     </h:column>
 
                     <f:facet name="footer">
                         <h:button styleClass="btn" outcome="program_create.xhtml"
                                   value="Add new program">
-                            <f:param name="programmerUuid" value="#{programController.programmerUuid}"/>
+                            <f:param name="programmerUuid" value="#{programViewController.programmerUuid}"/>
                         </h:button>
                     </f:facet>
                 </h:dataTable>

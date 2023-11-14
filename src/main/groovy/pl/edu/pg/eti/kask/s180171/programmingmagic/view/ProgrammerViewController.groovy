@@ -8,12 +8,12 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerS
 
 @RequestScoped
 @Named
-class ProgrammerController {
+class ProgrammerViewController {
 
     ProgrammerService programmerService
 
     @Inject
-    ProgrammerController(ProgrammerService programmerService) {
+    ProgrammerViewController(ProgrammerService programmerService) {
         this.programmerService = programmerService
     }
 

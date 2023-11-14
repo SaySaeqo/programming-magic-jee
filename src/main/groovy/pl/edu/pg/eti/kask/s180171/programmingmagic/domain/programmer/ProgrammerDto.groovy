@@ -1,10 +1,8 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
 import groovy.json.JsonGenerator
-import groovy.json.JsonOutput
 import groovy.transform.TupleConstructor
-import jakarta.json.stream.JsonGeneratorFactory
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer as entityProgrammer
+import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.model.ProgrammerLevel
 
 import java.time.LocalDate
@@ -17,34 +15,36 @@ class ProgrammerDto {
     }
 
     @TupleConstructor
-    static class Programmer{
+    static class ProgrammerModel {
         UUID uuid
         String name
         String title
         LocalDate birthday
         ProgrammerLevel level
 
-        Programmer(entityProgrammer other){
+        ProgrammerModel(Programmer other){
             properties.each {
                 try {
                     this."$it.key" = other."$it.key"
                 } catch (ReadOnlyPropertyException ignored){}
             }
         }
+
+        ProgrammerModel(){}
     }
 
-    static class Programmers{
-        List<Programmer> programmers = []
+    static class ProgrammersModel {
+        List<ProgrammerModel> programmers = []
 
-        Programmers(List<entityProgrammer> programmers){
+        ProgrammersModel(List<Programmer> programmers){
             programmers.each {
-                this.programmers << new Programmer(it)
+                this.programmers << new ProgrammerModel(it)
             }
 
         }
     }
 
-    static String getStandardInfo(entityProgrammer programmer){ generator.toJson new Programmer(programmer) }
-    static String getStandardInfo(List<entityProgrammer> programmers){ generator.toJson new Programmers(programmers)}
+    static String getStandardInfo(Programmer programmer){ generator.toJson new ProgrammerModel(programmer) }
+    static String getStandardInfo(List<Programmer> programmers){ generator.toJson new ProgrammersModel(programmers)}
 
 }
