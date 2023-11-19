@@ -1,10 +1,14 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.base
 
+import jakarta.transaction.Transactional
 import jakarta.validation.constraints.NotNull
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.EntityNotFoundException
 
 class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements Serializable{
 
+    Logger log = LoggerFactory.getLogger(BaseService.class.simpleName)
     R repository
 
     BaseService(){}
@@ -13,19 +17,21 @@ class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements 
         this.repository = repository
     }
 
-    T get(UUID uuid){
-        def result = repository.findByUUID(uuid)
-        if (result == null) throw new EntityNotFoundException(repository.entity.class, uuid)
+    @Transactional T get(UUID uuid){
+        repository._entityManager.entityManagerFactory.cache.evictAll()
+        repository._entityManager.clear()
+        def result = repository.findById(uuid)
+        if (result == null) throw new EntityNotFoundException(repository.clazz, uuid)
         result
     }
 
-    List<T> getAll(){ repository.findAll() }
-    T save(@NotNull T entity){ repository.save(entity) }
-    void delete(@NotNull T entity){ repository.delete(entity) }
-
-    void cascadeDelete(T entity){
-        repository.cascadeDelete(entity)
+    @Transactional List<T> getAll(){
+        repository._entityManager.entityManagerFactory.cache.evictAll()
+        repository._entityManager.clear()
+        repository.findAll()
     }
+    @Transactional T save(@NotNull T entity){ repository.save(entity) }
+    @Transactional void delete(@NotNull T entity){ repository.delete(entity) }
 
 
 }

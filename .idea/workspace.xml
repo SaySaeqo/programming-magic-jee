@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/ApplicationConfig.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/program/ProgramApiController.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/program/ProgramDto.groovy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerApiController.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http-client.env.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requests.http" beforeDir="false" afterPath="$PROJECT_DIR$/requests.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/DataStore.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/MainServlet.groovy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/HttpRequestException.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/base/HttpRequestException.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/Programmer.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerDto.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/domain/programmer/ProgrammerDto.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgramController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgramViewController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgrammerController.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/groovy/pl/edu/pg/eti/kask/s180171/programmingmagic/view/ProgrammerViewController.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/liberty/config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/liberty/config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/program.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/program.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/program_create.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/program_create.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/programmers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/programmers.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/programs.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/programs.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +45,8 @@
         <option value="CSS File" />
         <option value="SCSS File" />
         <option value="jsf" />
+        <option value="Class" />
+        <option value="HTTP Public Environment File" />
       </list>
     </option>
   </component>
@@ -75,6 +62,9 @@
         </Entry>
       </list>
     </option>
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/requests.http" environment="dev" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
@@ -96,59 +86,63 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SaySaeqo/IdeaProjects/programming-magic-4/src/main/webapp&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SaySaeqo/IdeaProjects/programming-magic-4/build&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\build" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\build\wlp" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\build\wlp\usr\shared\resources\h2" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\build\wlp\usr\servers\defaultServer\lib\global" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\portraits" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\backup" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\java\pl\edu\pg\eti\kask\s180171\programmingmagic\view" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\backup\wlp" />
+      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\backup\usr" />
       <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp\resources\default\img" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\groovy\pl\edu\pg\eti\kask\s180171\programmingmagic\domain\" />
-      <recent name="C:\Users\SaySaeqo\IdeaProjects\programming-magic-4\src\main\resources\pl\edu\pg\eti\kask\s180171\programmingmagic\portrait" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pl.edu.pg.eti.kask.s180171.programmingmagic.view" />
       <recent name="pl.edu.pg.eti.kask.s180171.programmingmagic" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.requests | Programmer - not existing">
+  <component name="RunManager" selected="HTTP Request.requests | All programs">
     <configuration name="requests | All programs" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="15" requestIdentifier="All programs" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests | Programmer - not existing" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="3" requestIdentifier="Programmer - not existing" runType="Run single request">
+    <configuration name="requests | Delete programmer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="9" requestIdentifier="Delete programmer" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests | Programmer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="2" requestIdentifier="Programmer" runType="Run single request">
+    <configuration name="requests | Programmer's program" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="12" requestIdentifier="Programmer's program" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="requests | Programmer's programs" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="11" requestIdentifier="Programmer's programs" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="requests | Programmers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" requestIdentifier="Programmers" runType="Run single request">
+    <configuration name="requests | Update programmer's program" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="13" requestIdentifier="Update programmer's program" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.requests | Programmer - not existing" />
-        <item itemvalue="HTTP Request.requests | Programmer's programs" />
         <item itemvalue="HTTP Request.requests | All programs" />
-        <item itemvalue="HTTP Request.requests | Programmer" />
-        <item itemvalue="HTTP Request.requests | Programmers" />
+        <item itemvalue="HTTP Request.requests | Programmer's programs" />
+        <item itemvalue="HTTP Request.requests | Delete programmer" />
+        <item itemvalue="HTTP Request.requests | Programmer's program" />
+        <item itemvalue="HTTP Request.requests | Update programmer's program" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +172,8 @@
       <workItem from="1699600336754" duration="37040000" />
       <workItem from="1699796645914" duration="8464000" />
       <workItem from="1699964404273" duration="6740000" />
-      <workItem from="1699971257696" duration="8112000" />
+      <workItem from="1699971257696" duration="10007000" />
+      <workItem from="1700325602378" duration="21836000" />
     </task>
     <task id="LOCAL-00001" summary="servlet">
       <option name="closed" value="true" />
@@ -236,7 +231,31 @@
       <option name="project" value="LOCAL" />
       <updated>1699966330817</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="jax-rs">
+      <option name="closed" value="true" />
+      <created>1699979416648</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699979416648</updated>
+    </task>
+    <task id="LOCAL-00009" summary="jax-rs">
+      <option name="closed" value="true" />
+      <created>1699980900620</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699980900620</updated>
+    </task>
+    <task id="LOCAL-00010" summary="jpa: walczę">
+      <option name="closed" value="true" />
+      <created>1700365315962</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1700365315962</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +277,12 @@
     <MESSAGE value="cdi: 1. zadanie z powtarzającą się ścieżką w InitializeDataStore" />
     <MESSAGE value="cdi: 2. zadanie + jw." />
     <MESSAGE value="jsf: nie uporządkowane" />
-    <option name="LAST_COMMIT_MESSAGE" value="jsf: nie uporządkowane" />
+    <MESSAGE value="jax-rs" />
+    <MESSAGE value="jpa: walczę" />
+    <option name="LAST_COMMIT_MESSAGE" value="jpa: walczę" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

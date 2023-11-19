@@ -6,7 +6,7 @@ import jakarta.inject.Inject
 import jakarta.inject.Named
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseEntityConverter
 
-@FacesConverter(forClass = Programmer.class, managed = true, value = "programmerConverter")
+@FacesConverter(forClass = Programmer.class, managed = true)
 class ProgrammerConverter extends BaseEntityConverter<ProgrammerService, Programmer>{
 
     @Inject

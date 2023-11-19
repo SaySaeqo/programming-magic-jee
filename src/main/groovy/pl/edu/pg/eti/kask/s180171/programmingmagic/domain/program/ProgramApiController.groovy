@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program
 
+import groovy.transform.CompileStatic
 import jakarta.inject.Inject
 import jakarta.ws.rs.Consumes
 import jakarta.ws.rs.DELETE
@@ -13,6 +14,7 @@ import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 
 @Path("program")
+@CompileStatic
 class ProgramApiController {
 
     ProgramService programService

@@ -4,7 +4,7 @@ import jakarta.faces.component.UIComponent
 import jakarta.faces.context.FacesContext
 import jakarta.faces.convert.Converter
 
-class BaseEntityConverter<S extends BaseService<?extends BaseRepository<T>,T> ,T extends BaseEntity> implements Converter<T> {
+class BaseEntityConverter<S ,T extends BaseEntity> implements Converter<T> {
 
     S service
 

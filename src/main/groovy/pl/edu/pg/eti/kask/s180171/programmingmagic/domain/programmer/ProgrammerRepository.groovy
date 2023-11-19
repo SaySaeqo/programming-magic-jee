@@ -2,12 +2,12 @@ package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
 import jakarta.enterprise.context.RequestScoped
 import jakarta.inject.Inject
+import jakarta.persistence.EntityManager
+import jakarta.persistence.PersistenceContext
 import jakarta.servlet.http.HttpServletResponse
-import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
 import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseRepository
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
 
 @RequestScoped
 class ProgrammerRepository extends BaseRepository<Programmer>{
@@ -16,9 +16,14 @@ class ProgrammerRepository extends BaseRepository<Programmer>{
 
     ProgrammerRepository(){super()}
     @Inject
-    ProgrammerRepository(DataStore dataStore, FileSystemController fileSystemController) {
-        super(dataStore, Programmer.class)
+    ProgrammerRepository(FileSystemController fileSystemController) {
+        super(Programmer.class)
         this.fileSystemController = fileSystemController
+    }
+
+    @PersistenceContext
+    void setEntityManager(EntityManager entityManager){
+        this._entityManager = entityManager
     }
 
     void savePortrait(InputStream inputStream, Programmer forProgrammer){
@@ -52,6 +57,12 @@ class ProgrammerRepository extends BaseRepository<Programmer>{
                     "There is no portrait for programmer with uuid $forProgrammer.uuid"
             )
         }
+    }
+
+    List<Programmer> findByName(String name){
+        _entityManager.createQuery("SELECT p FROM Programmer p WHERE p.name = :name")
+                .setParameter("name", name)
+                .resultList
     }
 
 }

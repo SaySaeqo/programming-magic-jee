@@ -2,19 +2,19 @@
 GET http://localhost:9080/programming-magic/api/programmer
 
 ### Programmer
-GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
 
 ### Programmer - not existing
 GET http://localhost:9080/programming-magic/api/programmer/12345678-552d-4fc2-8e64-644044d1dcb9
 
 ### Programmer's portrait
-GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
 
 ### Delete portrait
-DELETE http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+DELETE http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
 
 ### Put portrait
-PUT http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/portrait
+PUT http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
 Content-Type: multipart/form-data; boundary=myboundary
 
 --myboundary
@@ -35,7 +35,7 @@ Content-Type: application/json
 }
 
 ### Update programmer
-PATCH http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+PATCH http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
 Content-Type: application/json
 
 {
@@ -46,11 +46,11 @@ Content-Type: application/json
 }
 
 ### Delete programmer
-DELETE http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9
+DELETE http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
 
 ### Add programmer's program
 
-POST http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/program
+POST http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/program
 Content-Type: application/json
 
 {
@@ -61,14 +61,14 @@ Content-Type: application/json
 }
 
 ### Programmer's programs
-GET http://localhost:9080/programming-magic/api/programmer/b36b52a6-552d-4fc2-8e64-644044d1dcb9/program
+GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/program
 
 ### Programmer's program
-GET http://localhost:9080/programming-magic/api/program/todochange
+GET http://localhost:9080/programming-magic/api/program/{{programUuid}}
 
 ### Update programmer's program
 
-PATCH http://localhost:9080/programming-magic/api/program/todochange
+PATCH http://localhost:9080/programming-magic/api/program/{{programUuid}}
 Content-Type: application/json
 
 {
@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ### Delete programmer's program
 
-DELETE http://localhost:9080/programming-magic/api/program/todochange
+DELETE http://localhost:9080/programming-magic/api/program/{{programUuid}}
 
 ### All programs
 GET http://localhost:9080/programming-magic/api/program

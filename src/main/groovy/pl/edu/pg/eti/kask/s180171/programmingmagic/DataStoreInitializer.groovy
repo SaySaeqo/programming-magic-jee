@@ -6,16 +6,12 @@ import jakarta.enterprise.context.Initialized
 import jakarta.enterprise.context.control.RequestContextController
 import jakarta.enterprise.event.Observes
 import jakarta.inject.Inject
-import jakarta.servlet.http.HttpServletRequest
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import pl.edu.pg.eti.kask.s180171.programmingmagic.DataStore
-import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.ProgramService
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerRepository
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerService
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.model.ProgrammerLevel
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programminglanguage.ProgrammingLanguage
@@ -23,6 +19,7 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programminglanguage.Pr
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programminglanguage.model.ProgrammingLanguageType
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.technology.Technology
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.technology.TechnologyService
+import pl.edu.pg.eti.kask.s180171.programmingmagic.exception.EntityNotFoundException
 
 import java.nio.file.Paths
 import java.time.LocalDate
@@ -59,15 +56,15 @@ class DataStoreInitializer {
 
         requestContextController.activate()
 
-        final testUUID = UUID.fromString("b36b52a6-552d-4fc2-8e64-644044d1dcb9")
+//        final testUUID = UUID.fromString("b36b52a6-552d-4fc2-8e64-644044d1dcb9")
+        Programmer testProgrammer
 
         final projectDir = "C:/Users/SaySaeqo/IdeaProjects/programming-magic-4"
         final testSubDir = "src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait"
         final fullPath = Paths.get (projectDir,testSubDir).toString()
 
         programmerService.with {
-            save new Programmer(
-                    uuid: testUUID,
+            testProgrammer = save new Programmer(
                     name: "Andrzej",
                     birthday: LocalDate.of(1999, 1, 1),
                     level: ProgrammerLevel.JUNIOR,
@@ -110,7 +107,7 @@ class DataStoreInitializer {
             try {
                 def programmerUuid = programmerService.getByName(programmerName).uuid
                 portraits.put programmerUuid, fileContent
-            } catch (HttpRequestException ignored) {
+            } catch (EntityNotFoundException ignored) {
                 log.error "Programmer with name $programmerName not found"
                 return
             }
@@ -131,7 +128,7 @@ class DataStoreInitializer {
                             "    return nwd(b, a % b);\n" +
                             "}",
                     dateOfCreation: LocalDate.of(2021, 1, 1),
-                    author: programmerService.get(testUUID),
+                    author: testProgrammer
             )
             save new Program(
                     name: "Minimum",
@@ -144,14 +141,14 @@ class DataStoreInitializer {
                             "    return min;\n" +
                             "}",
                     dateOfCreation: LocalDate.of(2021, 1, 2),
-                    author: programmerService.get(testUUID),
+                    author: testProgrammer,
             )
             save new Program(
                     name: "Snake",
                     description: "Gra w snake'a",
                     code: "...",
                     dateOfCreation: LocalDate.of(2021, 1, 3),
-                    author: programmerService.get(testUUID),
+                    author: testProgrammer,
             )
             save new Program(
                     name: "Tetris",

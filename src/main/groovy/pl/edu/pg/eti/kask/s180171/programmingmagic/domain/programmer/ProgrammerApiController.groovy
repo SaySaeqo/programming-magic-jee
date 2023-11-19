@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
+import groovy.transform.CompileStatic
 import jakarta.inject.Inject
 import jakarta.ws.rs.Consumes
 import jakarta.ws.rs.DELETE
@@ -17,6 +18,7 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.ProgramDto
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.ProgramService
 
 @Path("programmer")
+@CompileStatic
 class ProgrammerApiController {
 
     ProgrammerService programmerService
@@ -46,9 +48,8 @@ class ProgrammerApiController {
     @Path("{uuid}/portrait")
     @Produces("image/png")
     byte[] getProgrammerPortrait(@PathParam("uuid") UUID uuid){
-        def programmer = programmerService.get(uuid)
-        def portrait = programmerService.getPortrait(programmer)
-        portrait
+        Programmer programmer = programmerService.get(uuid)
+        programmerService.getPortrait(programmer)
     }
 
     @GET
@@ -56,7 +57,7 @@ class ProgrammerApiController {
     @Produces(MediaType.APPLICATION_JSON)
     String getProgrammerPrograms(@PathParam("uuid") UUID uuid){
         def programmer = programmerService.get(uuid)
-        ProgramDto.getStandardInfo(programmerService.getApplications(programmer))
+        ProgramDto.getStandardInfo(programmer.applications)
     }
 
     @DELETE
@@ -70,8 +71,7 @@ class ProgrammerApiController {
     @Path("{uuid}")
     void deleteProgrammer(@PathParam("uuid") UUID uuid){
         def programmer = programmerService.get(uuid)
-        programmerService.getApplications(programmer)
-        programmerService.cascadeDelete(programmer)
+        programmerService.delete programmer
     }
 
     @PUT
