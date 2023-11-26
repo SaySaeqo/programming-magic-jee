@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.technology
 
+import groovy.transform.TupleConstructor
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
@@ -28,4 +29,10 @@ class Technology extends BaseEntity{
     @OneToMany(mappedBy = "usedTechnology")
     List<Program> applications
 
+    Technology(){}
+    Technology(String name, Boolean isFramework, LocalDate dateOfCreation){
+        this.name = name
+        this.isFramework = isFramework
+        this.dateOfCreation = dateOfCreation
+    }
 }

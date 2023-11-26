@@ -1,5 +1,7 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
+import groovy.transform.CompileStatic
+import jakarta.enterprise.context.Dependent
 import jakarta.enterprise.context.RequestScoped
 import jakarta.inject.Inject
 import jakarta.persistence.EntityManager
@@ -9,7 +11,8 @@ import pl.edu.pg.eti.kask.s180171.programmingmagic.FileSystemController
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.BaseRepository
 import pl.edu.pg.eti.kask.s180171.programmingmagic.base.HttpRequestException
 
-@RequestScoped
+@Dependent
+@CompileStatic
 class ProgrammerRepository extends BaseRepository<Programmer>{
 
     FileSystemController fileSystemController

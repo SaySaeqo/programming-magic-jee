@@ -1,6 +1,7 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
 import groovy.transform.CompileStatic
+import jakarta.ejb.EJB
 import jakarta.inject.Inject
 import jakarta.ws.rs.Consumes
 import jakarta.ws.rs.DELETE
@@ -24,9 +25,15 @@ class ProgrammerApiController {
     ProgrammerService programmerService
     ProgramService programService
 
-    @Inject
-    ProgrammerApiController(ProgrammerService programmerService, ProgramService programService){
+    ProgrammerApiController(){}
+
+    @EJB
+    void setProgrammerService(ProgrammerService programmerService){
         this.programmerService = programmerService
+    }
+
+    @EJB
+    void setProgramService(ProgramService programService){
         this.programService = programService
     }
 

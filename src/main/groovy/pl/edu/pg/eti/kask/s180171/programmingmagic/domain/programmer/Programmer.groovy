@@ -1,6 +1,8 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer
 
+import groovy.transform.CompileStatic
 import groovy.transform.ToString
+import groovy.transform.TupleConstructor
 import jakarta.persistence.CascadeType
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -14,6 +16,7 @@ import java.time.LocalDate
 
 @ToString
 @Entity
+@CompileStatic
 class Programmer extends BaseEntity{
 
     @Id
@@ -26,4 +29,12 @@ class Programmer extends BaseEntity{
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     List<Program> applications
+
+    Programmer(){}
+
+    Programmer(String name, LocalDate birthday, ProgrammerLevel level){
+        this.name = name
+        this.birthday = birthday
+        this.level = level
+    }
 }

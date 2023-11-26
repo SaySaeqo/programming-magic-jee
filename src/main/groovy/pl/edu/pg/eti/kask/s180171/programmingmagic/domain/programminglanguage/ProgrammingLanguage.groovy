@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programminglanguage
 
+import groovy.transform.TupleConstructor
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.OneToMany
@@ -20,5 +21,13 @@ class ProgrammingLanguage extends BaseEntity{
 
     @OneToMany(mappedBy = "language")
     List<Technology> technologies
+
+    ProgrammingLanguage(){}
+    ProgrammingLanguage(String name, ProgrammingLanguageType type, Boolean isCompiled, Boolean isStrongTyped){
+        this.name = name
+        this.type = type
+        this.isCompiled = isCompiled
+        this.isStrongTyped = isStrongTyped
+    }
 
 }

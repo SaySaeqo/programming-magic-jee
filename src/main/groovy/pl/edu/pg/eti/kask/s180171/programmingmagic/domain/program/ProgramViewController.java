@@ -1,10 +1,10 @@
-package pl.edu.pg.eti.kask.s180171.programmingmagic.view;
+package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program;
 
+import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program;
@@ -16,13 +16,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-@RequestScoped
+@ViewScoped
 @Named
 public class ProgramViewController implements Serializable {
 
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    ProgramService service;
+    ProgramService programService;
     ProgrammerService programmerService;
 
     UUID programmerUuid;
@@ -30,35 +30,41 @@ public class ProgramViewController implements Serializable {
     Program program = new Program(); //?? czemu to jest potrzebne?
     Programmer programmer;
 
-    @Inject
-    public ProgramViewController(ProgramService service, ProgrammerService programmerService) {
-        this.service = service;
+    public ProgramViewController() {}
+
+    @EJB
+    public void setProgramService(ProgramService programService) {
+        this.programService = programService;
+    }
+
+    @EJB
+    public void setProgrammerService(ProgrammerService programmerService) {
         this.programmerService = programmerService;
     }
 
     public List<Program> getPrograms() {
         programmerService.getBaseService().getRepository().get_entityManager().getEntityManagerFactory().getCache().evictAll();
         programmerService.getBaseService().getRepository().get_entityManager().clear();
-        return programmerUuid != null ? programmerService.get(programmerUuid).getApplications() : service.getAll();
+        return programmerUuid != null ? programmerService.getBaseService().get(programmerUuid).getApplications() : programService.getAll();
     }
 
     public void initProgram(){
-        program = programUuid != null ? service.get(programUuid) : new Program();
+        program = programUuid != null ? programService.get(programUuid) : new Program();
     }
 
     public void initProgrammer(){
         if (programmerUuid == null) return;
-        programmer = programmerService.get(programmerUuid);
+        programmer = programmerService.getBaseService().get(programmerUuid);
     }
 
     public String delete(Program program) {
-        service.delete(program);
+        programService.delete(program);
         return "programs?faces-redirect=true";
     }
 
     public String save() {
-        program.setAuthor(programmerService.get(programmerUuid));
-        service.save(program);
+        program.setAuthor(programmerService.getBaseService().get(programmerUuid));
+        programService.save(program);
         return "programs?faces-redirect=true";
     }
 

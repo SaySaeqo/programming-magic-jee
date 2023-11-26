@@ -1,10 +1,12 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.base
 
+import groovy.transform.CompileStatic
 import jakarta.persistence.EntityManager
 import jakarta.validation.constraints.NotNull
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
+@CompileStatic
 class BaseRepository<T extends BaseEntity>{
 
     Logger log = LoggerFactory.getLogger(this.class.simpleName)

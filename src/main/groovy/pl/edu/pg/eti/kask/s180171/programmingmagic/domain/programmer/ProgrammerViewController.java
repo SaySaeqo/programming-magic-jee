@@ -1,27 +1,31 @@
-package pl.edu.pg.eti.kask.s180171.programmingmagic.view;
+package pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer;
 
+import jakarta.ejb.EJB;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Inject;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer;
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerService;
 
+import java.io.Serializable;
 import java.util.List;
 
-@RequestScoped
+@ViewScoped
 @Named
-public class ProgrammerViewController {
+public class ProgrammerViewController implements Serializable {
 
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-    ProgrammerService programmerService;
+    private ProgrammerService programmerService;
 
-    @Inject
-    public ProgrammerViewController(ProgrammerService programmerService) {
+    @EJB
+    public void setProgrammerService(ProgrammerService programmerService) {
         this.programmerService = programmerService;
     }
+
+    public ProgrammerViewController() {}
+
 
     public List<Programmer> getProgrammers() {
         return programmerService.getAll();

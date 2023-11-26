@@ -1,6 +1,6 @@
 package pl.edu.pg.eti.kask.s180171.programmingmagic.base
 
-import jakarta.transaction.Transactional
+
 import jakarta.validation.constraints.NotNull
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -17,7 +17,7 @@ class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements 
         this.repository = repository
     }
 
-    @Transactional T get(UUID uuid){
+    T get(UUID uuid){
         repository._entityManager.entityManagerFactory.cache.evictAll()
         repository._entityManager.clear()
         def result = repository.findById(uuid)
@@ -25,13 +25,13 @@ class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements 
         result
     }
 
-    @Transactional List<T> getAll(){
+    List<T> getAll(){
         repository._entityManager.entityManagerFactory.cache.evictAll()
         repository._entityManager.clear()
         repository.findAll()
     }
-    @Transactional T save(@NotNull T entity){ repository.save(entity) }
-    @Transactional void delete(@NotNull T entity){ repository.delete(entity) }
+    T save(@NotNull T entity){ repository.save(entity) }
+    void delete(@NotNull T entity){ repository.delete(entity) }
 
 
 }
