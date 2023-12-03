@@ -1,9 +1,15 @@
-package programmingmagic;
+package programmingmagic.init;
 
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.security.DeclareRoles;
+import jakarta.annotation.security.RunAs;
 import jakarta.ejb.*;
+import jakarta.inject.Inject;
+import jakarta.security.enterprise.SecurityContext;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import programmingmagic.FileSystemController;
 import programmingmagic.domain.program.Program;
 import programmingmagic.domain.program.ProgramService;
 import programmingmagic.domain.programmer.Programmer;
@@ -14,6 +20,7 @@ import programmingmagic.domain.programminglanguage.ProgrammingLanguageService;
 import programmingmagic.domain.programminglanguage.model.ProgrammingLanguageType;
 import programmingmagic.domain.technology.Technology;
 import programmingmagic.domain.technology.TechnologyService;
+import programmingmagic.security.UserRoles;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -26,6 +33,10 @@ import java.util.UUID;
 @Singleton
 @Startup
 @TransactionAttribute(value = TransactionAttributeType.NOT_SUPPORTED)
+@DependsOn("InitializeAdminService")
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
+@RunAs(UserRoles.ADMIN)
+@NoArgsConstructor
 public class DataStoreInitializer {
 
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -34,7 +45,6 @@ public class DataStoreInitializer {
     ProgrammingLanguageService programmingLanguageService;
     TechnologyService technologyService;
 
-    public DataStoreInitializer(){}
 
     @EJB
     public void setProgrammerService(ProgrammerService programmerService) {
@@ -82,6 +92,17 @@ public class DataStoreInitializer {
         String projectDir = "/home/saysaeqo/javaProjects/programming-magic-4";
         String testSubDir = "src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait";
         String fullPath = Paths.get (projectDir,testSubDir).toString();
+
+        // iterate throuth all files in directory
+        String portraitDir = Paths.get(projectDir, "portraits").toString();
+        File[] currentPortraits = new File(portraitDir).listFiles();
+        if (currentPortraits == null) {
+            log.error(String.format("Error while reading directory %s", portraitDir));
+            return;
+        }
+        for (File file : currentPortraits){
+            file.delete();
+        }
 
         Map<UUID, byte[]> portraits = new HashMap<>();
         // iterate throuth all files in directory

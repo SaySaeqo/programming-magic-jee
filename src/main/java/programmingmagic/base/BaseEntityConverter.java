@@ -4,7 +4,7 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import java.util.UUID;
 
-public class BaseEntityConverter<S extends BaseService<BaseRepository<T>, T>,T extends BaseEntity> implements Converter<T> {
+public class BaseEntityConverter<S extends Service<T>,T extends BaseEntity> implements Converter<T> {
     private S service;
 
     public BaseEntityConverter(S service){

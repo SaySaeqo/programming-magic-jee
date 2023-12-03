@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements Serializable {
+public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements Service<T> {
     private Logger log = LoggerFactory.getLogger(BaseService.class.getSimpleName());
 
     public R getRepository() {
@@ -34,6 +34,7 @@ public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> impl
         return result;
     }
 
+    @Override
     public List<T> getAll() {
         repository.getEntityManager().getEntityManagerFactory().getCache().evictAll();
         repository.getEntityManager().clear();

@@ -1,5 +1,6 @@
 package programmingmagic.domain.program;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -10,11 +11,14 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import programmingmagic.security.UserRoles;
+
 import java.util.UUID;
 
 @Path("program")
+@RolesAllowed(UserRoles.USER)
 public class ProgramApiController {
-    @Inject
+
     private ProgramService programService;
 
     public ProgramApiController() {}

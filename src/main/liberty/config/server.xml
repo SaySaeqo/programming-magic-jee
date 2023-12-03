@@ -12,13 +12,25 @@
         <feature>appSecurity-5.0</feature>
     </featureManager>
 
+    <application type="war" location="programming-magic-1.0-SNAPSHOT.war">
+        <application-bnd>
+            <security-role name="admin">
+                <group name="admin" access-id="group:jdbc/ProgrammingMagic/admin"/>
+                <run-as userid="admin"/>
+            </security-role>
+            <security-role name="user">
+                <group name="user" access-id="group:jdbc/ProgrammingMagic/user"/>
+            </security-role>
+        </application-bnd>
+    </application>
+
     <dataSource id="ProgrammingMagicDataSource" jndiName="jdbc/ProgrammingMagic">
         <jdbcDriver javax.sql.XADataSource="org.h2.jdbcx.JdbcDataSource"
                     javax.sql.ConnectionPoolDataSource="org.h2.jdbcx.JdbcDataSource"
                     javax.sql.DataSource="org.h2.jdbcx.JdbcDataSource"
                     libraryRef="H2JDBCLib"/>
-        <properties URL="jdbc:h2:mem:simple-rpg-characters"/>
-        <!--        <properties URL="jdbc:h2:/tmp/simple-rpg-characters;AUTO_SERVER=TRUE"/>-->
+        <properties URL="jdbc:h2:mem:programming-magic"/>
+        <!--        <properties URL="jdbc:h2:/tmp/programming-magic;AUTO_SERVER=TRUE"/>-->
     </dataSource>
 
     <library id="H2JDBCLib">

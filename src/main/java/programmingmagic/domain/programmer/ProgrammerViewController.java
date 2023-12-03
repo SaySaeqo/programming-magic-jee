@@ -3,6 +3,7 @@ package programmingmagic.domain.programmer;
 import jakarta.ejb.EJB;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @ViewScoped
 @Named
+@NoArgsConstructor
 public class ProgrammerViewController implements Serializable {
 
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -21,8 +23,6 @@ public class ProgrammerViewController implements Serializable {
     public void setProgrammerService(ProgrammerService programmerService) {
         this.programmerService = programmerService;
     }
-
-    public ProgrammerViewController() {}
 
 
     public List<Programmer> getProgrammers() {

@@ -22,6 +22,10 @@
         <header>
             <h:graphicImage library="default" name="img/webicon.png" alt="Programming Magic Icon"/>
             <div class="webtitle">Programming Magic</div>
+            <h:form rendered="#{facesContext.externalContext.userPrincipal != null}">
+                Logged: <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/>
+                <h:commandButton value="Logout" action="#{userViewController.logoutAction()}"/>
+            </h:form>
         </header>
 
         <nav>
@@ -35,6 +39,15 @@
                 <li>
                     <h:link outcome="/programs.xhtml">Programs</h:link>
                 </li>
+                <h:panelGroup rendered="#{facesContext.externalContext.isUserInRole('admin')}">
+                    <li class="nav-item">
+                        <h:link styleClass="nav-link"
+                                outcome="/users.xhtml">Users</h:link>
+                    </li>
+                </h:panelGroup>
+                <h:form rendered="#{facesContext.externalContext.userPrincipal == null}">
+                    <h:link outcome="/login.xhtml">Sign in</h:link>
+                </h:form>
             </ul>
         </nav>
 

@@ -1,4 +1,4 @@
-package programmingmagic;
+package programmingmagic.security;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.security.enterprise.authentication.mechanism.http.BasicAuthenticationMechanismDefinition;
@@ -22,23 +22,23 @@ import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
  * Both form based methods required {@link LoginToContinue} configuration.
  */
 @ApplicationScoped
-@BasicAuthenticationMechanismDefinition(realmName = "Simple RPG")
+@BasicAuthenticationMechanismDefinition(realmName = "Programming Magic")
 //@FormAuthenticationMechanismDefinition(
 //        loginToContinue = @LoginToContinue(
-//                loginPage = "/authentication/form/login.xhtml",
-//                errorPage = "/authentication/form/login_error.xhtml"
+//                loginPage = "/login.xhtml",
+//                errorPage = "/login_error.xhtml"
 //        )
 //)
 //@CustomFormAuthenticationMechanismDefinition(
 //        loginToContinue = @LoginToContinue(
-//                loginPage = "/authentication/custom/login.xhtml",
-//                errorPage = "/authentication/custom/login_error.xhtml"
+//                loginPage = "/login.xhtml",
+//                errorPage = "/login_error.xhtml"
 //        )
 //)
 @DatabaseIdentityStoreDefinition(
-        dataSourceLookup = "jdbc/SimpleRpgCharacters",
-        callerQuery = "select password from users where login = ?",
-        groupsQuery = "select role from users__roles where id = (select id from users where login = ?)",
+        dataSourceLookup = "jdbc/ProgrammingMagic",
+        callerQuery = "select a.password from app_user a where a.login = ?",
+        groupsQuery = "select r.roles from user_role r where r.uuid = (select a.uuid from app_user a where a.login = ?)",
         hashAlgorithm = Pbkdf2PasswordHash.class
 )
 public class AuthenticationConfig {

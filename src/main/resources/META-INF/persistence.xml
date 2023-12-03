@@ -9,6 +9,7 @@
         <class>programmingmagic.domain.program.Program</class>
         <class>programmingmagic.domain.programminglanguage.ProgrammingLanguage</class>
         <class>programmingmagic.domain.technology.Technology</class>
+        <class>programmingmagic.security.User</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>

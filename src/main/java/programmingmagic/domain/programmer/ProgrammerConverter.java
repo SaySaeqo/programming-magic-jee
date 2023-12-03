@@ -1,20 +1,23 @@
 package programmingmagic.domain.programmer;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
 import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @FacesConverter(forClass = Programmer.class, managed = true)
+@NoArgsConstructor
 public class ProgrammerConverter implements Converter<Programmer> {
     private ProgrammerService service;
 
-    @Inject
-    public ProgrammerConverter(ProgrammerService service){
-        this.service = service;
+    @EJB
+    public void setProgrammerService(ProgrammerService programmerService) {
+        this.service = programmerService;
     }
 
     @Override

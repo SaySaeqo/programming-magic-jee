@@ -1,5 +1,6 @@
 package programmingmagic.domain.programmer;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import programmingmagic.domain.program.Program;
 import programmingmagic.domain.program.ProgramDto;
 import programmingmagic.domain.program.ProgramService;
+import programmingmagic.security.UserRoles;
 
 import java.io.InputStream;
 import java.util.UUID;
@@ -17,22 +19,20 @@ import java.util.UUID;
 public class ProgrammerApiController {
 
     private Logger log = LoggerFactory.getLogger(getClass().getSimpleName());
-    @EJB
     private ProgrammerService programmerService;
-    @EJB
     private ProgramService programService;
 
     public ProgrammerApiController(){}
 
-//    @EJB
-//    public void setProgrammerService(ProgrammerService programmerService){
-//        this.programmerService = programmerService;
-//    }
-//
-//    @EJB
-//    public void setProgramService(ProgramService programService){
-//        this.programService = programService;
-//    }
+    @EJB
+    public void setProgrammerService(ProgrammerService programmerService){
+        this.programmerService = programmerService;
+    }
+
+    @EJB
+    public void setProgramService(ProgramService programService){
+        this.programService = programService;
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -52,7 +52,6 @@ public class ProgrammerApiController {
     @Path("{uuid}/portrait")
     @Produces("image/png")
     public byte[] getProgrammerPortrait(@PathParam("uuid") UUID uuid){
-        log.info(String.format("ProgrammerService: %s", uuid.toString()));
         Programmer programmer = programmerService.get(uuid);
         return programmerService.getPortrait(programmer);
     }
@@ -74,6 +73,7 @@ public class ProgrammerApiController {
 
     @DELETE
     @Path("{uuid}")
+    @RolesAllowed(UserRoles.ADMIN)
     public void deleteProgrammer(@PathParam("uuid") UUID uuid){
         Programmer programmer = programmerService.get(uuid);
         programmerService.delete(programmer);
