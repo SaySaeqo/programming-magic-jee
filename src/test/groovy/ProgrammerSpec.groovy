@@ -1,8 +1,6 @@
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerRepository
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.ProgrammerService
-import pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.model.ProgrammerLevel
+import programmingmagic.domain.program.Program
+import programmingmagic.domain.programmer.Programmer
+import programmingmagic.domain.programmer.model.ProgrammerLevel
 import spock.lang.Specification
 
 import java.time.LocalDate

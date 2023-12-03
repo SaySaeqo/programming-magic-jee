@@ -5,10 +5,10 @@
              version="3.0">
     <persistence-unit name="ProgrammingMagicPu" transaction-type="JTA">
         <jta-data-source>jdbc/ProgrammingMagic</jta-data-source>
-        <class>pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programmer.Programmer</class>
-        <class>pl.edu.pg.eti.kask.s180171.programmingmagic.domain.program.Program</class>
-        <class>pl.edu.pg.eti.kask.s180171.programmingmagic.domain.programminglanguage.ProgrammingLanguage</class>
-        <class>pl.edu.pg.eti.kask.s180171.programmingmagic.domain.technology.Technology</class>
+        <class>programmingmagic.domain.programmer.Programmer</class>
+        <class>programmingmagic.domain.program.Program</class>
+        <class>programmingmagic.domain.programminglanguage.ProgrammingLanguage</class>
+        <class>programmingmagic.domain.technology.Technology</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
