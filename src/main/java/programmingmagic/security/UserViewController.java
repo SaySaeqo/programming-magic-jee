@@ -7,7 +7,6 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.security.enterprise.AuthenticationStatus;
 import jakarta.security.enterprise.SecurityContext;
-import jakarta.security.enterprise.credential.Credential;
 import jakarta.security.enterprise.credential.Password;
 import jakarta.security.enterprise.credential.UsernamePasswordCredential;
 import jakarta.servlet.ServletException;
@@ -66,7 +65,6 @@ public class UserViewController {
     }
 
     public void signIn() {
-        userService.getAll().forEach(user -> log.info("User: {}", user));
         log.info("Sign in attempt for user: {}", login);
         log.info("Password: {}", password);
         AuthenticationStatus status = securityContext.authenticate(request, extractResponseFromFacesContext(),

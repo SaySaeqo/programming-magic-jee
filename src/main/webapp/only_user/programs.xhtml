@@ -13,69 +13,66 @@
     <ui:define name="content">
         <article>
             <header>
-                <h1>List of programs</h1>
+                <h1>#{messages['programs.title']}</h1>
             </header>
             <section>
                 <h:panelGroup layout="block" styleClass="tableGrid" rendered="#{programViewController.programmerUuid != null}">
-                    <div><h:outputText value="UUID: "/></div>
+                    <div><h:outputText value="UUID:"/></div>
                     <div><h:outputText value="#{programViewController.programmer.uuid}"/></div>
-                    <div><h:outputText value="Name: "/></div>
+                    <div><h:outputText value="#{messages['programmer.name']}"/></div>
                     <div><h:outputText value="#{programViewController.programmer.name}"/></div>
-                    <div><h:outputText value="Title: "/></div>
+                    <div><h:outputText value="#{messages['programmer.title']}"/></div>
                     <div><h:outputText value="#{programViewController.programmer.title}"/></div>
-                    <div><h:outputText value="Birthday: "/></div>
+                    <div><h:outputText value="#{messages['programmer.birthday']}"/></div>
                     <div><h:outputText value="#{programViewController.programmer.birthday}"/></div>
-                    <div><h:outputText value="Level: "/></div>
+                    <div><h:outputText value="#{messages['programmer.level']}"/></div>
                     <div><h:outputText value="#{programViewController.programmer.level}"/></div>
                 </h:panelGroup>
 
-                <h:dataTable value="#{programViewController.getPrograms()}" var="program"
-                             styleClass="tableList" headerClass="bg-light">
+                <h:dataTable value="#{programViewController.getPrograms()}" var="program" styleClass="tableList" >
 
                     <h:column>
-                        <f:facet name="header">Name</f:facet>
+                        <f:facet name="header">#{messages['programs.name']}</f:facet>
                         <h:outputText value="#{program.name}"/>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Author</f:facet>
+                        <f:facet name="header">#{messages['programs.author']}</f:facet>
                         <h:outputText value="#{program.author.name}"/>
                     </h:column>
 
 
                     <h:column>
-                        <f:facet name="header">Code</f:facet>
+                        <f:facet name="header">#{messages['programs.code']}</f:facet>
                         <div class="code">
                             <h:outputText value="#{program.code}"/>
                         </div>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">View</f:facet>
-                        <h:link outcome="/program.xhtml" value="View">
+                        <f:facet name="header">#{messages['view']}</f:facet>
+                        <h:link outcome="/only_user/program.xhtml" value="#{messages['view']}">
                             <f:param name="uuid" value="#{program.uuid}"/>
                         </h:link>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Edit</f:facet>
-                        <h:link outcome="program_create.xhtml" value="Edit">
+                        <f:facet name="header">#{messages['edit']}</f:facet>
+                        <h:link outcome="/only_user/program_create.xhtml" value="#{messages['edit']}">
                             <f:param name="programUuid" value="#{program.uuid}"/>
                             <f:param name="programmerUuid" value="#{program.author.uuid}"/>
                         </h:link>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Delete</f:facet>
+                        <f:facet name="header">#{messages['delete']}</f:facet>
                         <h:form>
-                            <h:commandButton styleClass="btn" value="Delete"
-                                             action="#{programViewController.delete(program)}"/>
+                            <h:commandButton value="#{messages['delete']}" action="#{programViewController.delete(program)}"/>
                         </h:form>
                     </h:column>
 
                     <f:facet name="footer">
-                        <h:button styleClass="btn" outcome="program_create.xhtml"
-                                  value="Add new program">
+                        <h:button outcome="program_create.xhtml" value="#{messages['programs.add']}">
                             <f:param name="programmerUuid" value="#{programViewController.programmerUuid}"/>
                         </h:button>
                     </f:facet>

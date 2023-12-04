@@ -1,5 +1,6 @@
 package programmingmagic.domain.program;
 
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.LocalBean;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @LocalBean
 @Stateless
 @NoArgsConstructor
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
 public class ProgramService implements Service<Program> {
 
     BaseService<ProgramRepository, Program> baseService;

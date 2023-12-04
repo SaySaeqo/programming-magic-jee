@@ -1,5 +1,6 @@
 package programmingmagic.domain.programmer;
 
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.PermitAll;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.LocalBean;
@@ -22,12 +23,11 @@ import java.util.UUID;
 @LocalBean
 @Stateless
 @NoArgsConstructor
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
 public class ProgrammerService implements Service<Programmer> {
 
     private Logger log = LoggerFactory.getLogger(getClass().getSimpleName());
     private BaseService<ProgrammerRepository, Programmer> baseService;
-
-    public BaseService<ProgrammerRepository, Programmer> getBaseService(){ return baseService; }
 
     @Inject public ProgrammerService(ProgrammerRepository repository){
         baseService = new BaseService<ProgrammerRepository, Programmer>(repository);
@@ -63,5 +63,10 @@ public class ProgrammerService implements Service<Programmer> {
     @RolesAllowed(UserRoles.ADMIN)
     public void delete(@NotNull Programmer entity){
         baseService.delete(entity);
+    }
+
+    public void clearCache(){
+        baseService.getRepository().getEntityManager().getEntityManagerFactory().getCache().evictAll();
+        baseService.getRepository().getEntityManager().clear();
     }
 }

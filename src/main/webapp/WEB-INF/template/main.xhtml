@@ -16,38 +16,42 @@
 
         <h:outputStylesheet library="default" name="css/main.css"/>
         <h:outputStylesheet library="generated" name="css/main.css"/>
+        <f:loadBundle var="messages" basename="i18n.messages"/>
     </h:head>
 
     <h:body>
         <header>
-            <h:graphicImage library="default" name="img/webicon.png" alt="Programming Magic Icon"/>
+            <h:graphicImage library="default" name="#{messages['paths.logo']}" alt="Programming Magic Icon"/>
             <div class="webtitle">Programming Magic</div>
             <h:form rendered="#{facesContext.externalContext.userPrincipal != null}">
-                Logged: <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/>
-                <h:commandButton value="Logout" action="#{userViewController.logoutAction()}"/>
+                <div class="logged">
+                <p>#{messages['nav.logged']} <h:outputText value="#{facesContext.externalContext.userPrincipal.name}"/></p>
+                <h:commandButton value="#{messages['nav.logout']}" action="#{userViewController.logoutAction()}"/>
+                </div>
             </h:form>
         </header>
 
         <nav>
             <ul>
                 <li>
-                    <h:link outcome="/index.xhtml">Home</h:link>
+                    <h:link outcome="/index.xhtml">#{messages['nav.home']}</h:link>
                 </li>
                 <li>
-                    <h:link outcome="/programmers.xhtml">Programmers</h:link>
+                    <h:link outcome="/only_user/programmers.xhtml">#{messages['nav.programmers']}</h:link>
                 </li>
                 <li>
-                    <h:link outcome="/programs.xhtml">Programs</h:link>
+                    <h:link outcome="/only_user/programs.xhtml">#{messages['nav.programs']}</h:link>
                 </li>
                 <h:panelGroup rendered="#{facesContext.externalContext.isUserInRole('admin')}">
-                    <li class="nav-item">
-                        <h:link styleClass="nav-link"
-                                outcome="/users.xhtml">Users</h:link>
+                    <li>
+                        <h:link outcome="/only_admin/users.xhtml">#{messages['nav.users']}</h:link>
                     </li>
                 </h:panelGroup>
-                <h:form rendered="#{facesContext.externalContext.userPrincipal == null}">
-                    <h:link outcome="/login.xhtml">Sign in</h:link>
-                </h:form>
+                <h:panelGroup rendered="#{facesContext.externalContext.userPrincipal == null}">
+                    <li>
+                        <h:link outcome="/auth/login.xhtml">#{messages['nav.login']}</h:link>
+                    </li>
+                </h:panelGroup>
             </ul>
         </nav>
 

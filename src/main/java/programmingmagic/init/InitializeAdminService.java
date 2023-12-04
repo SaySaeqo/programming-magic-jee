@@ -47,10 +47,10 @@ public class InitializeAdminService {
         if (userRepository == null || passwordHash == null) {
             throw new IllegalStateException("Not injected correctly");
         }
-        if (userRepository.findByLogin("admin") == null) {
+        if (userRepository.findByLogin("admin-service") == null) {
 
             User admin = User.builder()
-                    .login("admin")
+                    .login("admin-service")
                     .password(passwordHash.generate("adminadmin".toCharArray()))
                     .roles(List.of(UserRoles.ADMIN, UserRoles.USER))
                     .build();

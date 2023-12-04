@@ -6,6 +6,7 @@ import jakarta.annotation.security.RunAs;
 import jakarta.ejb.*;
 import jakarta.inject.Inject;
 import jakarta.security.enterprise.SecurityContext;
+import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,12 +21,15 @@ import programmingmagic.domain.programminglanguage.ProgrammingLanguageService;
 import programmingmagic.domain.programminglanguage.model.ProgrammingLanguageType;
 import programmingmagic.domain.technology.Technology;
 import programmingmagic.domain.technology.TechnologyService;
+import programmingmagic.security.User;
 import programmingmagic.security.UserRoles;
+import programmingmagic.security.UserService;
 
 import java.io.*;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -44,7 +48,14 @@ public class DataStoreInitializer {
     ProgrammerService programmerService;
     ProgrammingLanguageService programmingLanguageService;
     TechnologyService technologyService;
+    UserService userService;
+    Pbkdf2PasswordHash passwordHash;
 
+
+    @Inject
+    public DataStoreInitializer(Pbkdf2PasswordHash passwordHash) {
+        this.passwordHash = passwordHash;
+    }
 
     @EJB
     public void setProgrammerService(ProgrammerService programmerService) {
@@ -65,6 +76,12 @@ public class DataStoreInitializer {
     public void setTechnologyService(TechnologyService technologyService) {
         this.technologyService = technologyService;
     }
+
+    @EJB
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
 
     // albo też bez @Startup jako zwykła klasa, która byłaby tworzona i wywoływana w servlecie w metodzie init
     @PostConstruct
@@ -239,6 +256,19 @@ public class DataStoreInitializer {
                 LocalDate.of(2000, 1, 1)
         );
 
+        User user1 = User.builder()
+                .login("adm") // DLACZEGO NIE MOŻE BYĆ "admin"?!?!
+                .password(passwordHash.generate("admin".toCharArray()))
+                .roles(List.of(UserRoles.ADMIN, UserRoles.USER))
+                .build();
+
+        User user2 = User.builder()
+                .login("user")
+                .password(passwordHash.generate("user".toCharArray()))
+                .roles(List.of(UserRoles.USER))
+                .build();
+
+
         save(program1);
         save(program2);
         save(program3);
@@ -251,6 +281,8 @@ public class DataStoreInitializer {
         save(technology2);
         save(technology3);
         save(technology4);
+        save(user1);
+        save(user2);
 
     }
 
@@ -268,5 +300,9 @@ public class DataStoreInitializer {
 
     private void save(Technology technology) {
         technologyService.save(technology);
+    }
+
+    private void save(User user) {
+        userService.save(user);
     }
 }

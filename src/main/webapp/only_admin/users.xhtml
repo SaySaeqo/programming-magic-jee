@@ -7,19 +7,28 @@
 
    <ui:define name="content">
       <article>
-         <header><h2>Users</h2></header>
+         <header><h2>#{messages['nav.users']}</h2></header>
 
          <h:dataTable value="#{userViewController.getUsers()}" var="user">
             <h:column>
-               <f:facet name="header">Login</f:facet>
+               <f:facet name="header">#{messages['users.login']}</f:facet>
                <h:outputText value="#{user.login}"/>
             </h:column>
 
             <h:column>
-               <f:facet name="header">Delete</f:facet>
+               <f:facet name="header">#{messages['users.password']}</f:facet>
+               <h:outputText value="#{user.password}"/>
+            </h:column>
+
+            <h:column>
+               <f:facet name="header">#{messages['users.roles']}</f:facet>
+               <h:outputText value="#{user.roles}"/>
+            </h:column>
+
+            <h:column>
+               <f:facet name="header">#{messages['delete']}</f:facet>
                <h:form>
-                  <h:commandButton styleClass="btn" value="Delete"
-                                   action="#{userViewController.delete(user)}"/>
+                  <h:commandButton value="#{messages['delete']}" action="#{userViewController.delete(user)}"/>
                </h:form>
             </h:column>
          </h:dataTable>

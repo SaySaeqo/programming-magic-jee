@@ -13,21 +13,21 @@
     <ui:define name="content">
         <article>
             <header>
-                <h1>Program full data</h1>
+                <h1>#{messages['program.title']}</h1>
             </header>
             <section>
                 <div class="tableGrid">
-                    <div><h:outputText value="UUID: "/></div>
+                    <div><h:outputText value="UUID:"/></div>
                     <div><h:outputText value="#{programViewController.program.uuid}"/></div>
-                    <div><h:outputText value="Name: "/></div>
+                    <div><h:outputText value="#{messages['program.name']}"/></div>
                     <div><h:outputText value="#{programViewController.program.name}"/></div>
-                    <div><h:outputText value="Description: "/></div>
+                    <div><h:outputText value="#{messages['program.description']}"/></div>
                     <div><h:outputText value="#{programViewController.program.description}"/></div>
-                    <div><h:outputText value="Created: "/></div>
+                    <div><h:outputText value="#{messages['program.created']}"/></div>
                     <div><h:outputText value="#{programViewController.program.dateOfCreation}"/></div>
-                    <div><h:outputText value="UsedTechnology: "/></div>
+                    <div><h:outputText value="#{messages['program.usedTechnology']}"/></div>
                     <div><h:outputText value="#{programViewController.program.usedTechnology ? programViewController.program.usedTechnology.name : '-'}"/></div>
-                    <div><h:outputText value="Code: "/></div>
+                    <div><h:outputText value="#{messages['program.code']}"/></div>
                     <div style="display: flex"><h:outputText value="#{programViewController.program.code}" styleClass="code"/></div>
                 </div>
             </section>

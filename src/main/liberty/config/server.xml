@@ -16,7 +16,7 @@
         <application-bnd>
             <security-role name="admin">
                 <group name="admin" access-id="group:jdbc/ProgrammingMagic/admin"/>
-                <run-as userid="admin"/>
+                <run-as userid="admin-service"/>
             </security-role>
             <security-role name="user">
                 <group name="user" access-id="group:jdbc/ProgrammingMagic/user"/>

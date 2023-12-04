@@ -22,19 +22,19 @@ import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
  * Both form based methods required {@link LoginToContinue} configuration.
  */
 @ApplicationScoped
-@BasicAuthenticationMechanismDefinition(realmName = "Programming Magic")
+//@BasicAuthenticationMechanismDefinition(realmName = "Programming Magic")
 //@FormAuthenticationMechanismDefinition(
 //        loginToContinue = @LoginToContinue(
-//                loginPage = "/login.xhtml",
-//                errorPage = "/login_error.xhtml"
+//                loginPage = "/auth/login.xhtml",
+//                errorPage = "/auth/login_error.xhtml"
 //        )
 //)
-//@CustomFormAuthenticationMechanismDefinition(
-//        loginToContinue = @LoginToContinue(
-//                loginPage = "/login.xhtml",
-//                errorPage = "/login_error.xhtml"
-//        )
-//)
+@CustomFormAuthenticationMechanismDefinition(
+        loginToContinue = @LoginToContinue(
+                loginPage = "/auth/login.xhtml",
+                errorPage = "/auth/login_error.xhtml"
+        )
+)
 @DatabaseIdentityStoreDefinition(
         dataSourceLookup = "jdbc/ProgrammingMagic",
         callerQuery = "select a.password from app_user a where a.login = ?",

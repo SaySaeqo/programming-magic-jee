@@ -8,25 +8,24 @@
     <ui:define name="content">
         <article>
             <header>
-                <h1>List of programmers</h1>
+                <h1>#{messages['programmers.title']}</h1>
             </header>
             <section>
-                <h:dataTable value="#{programmerViewController.getProgrammers()}" var="programmer"
-                             styleClass="tableList align-middle mb-0 bg-white" headerClass="bg-light">
+                <h:dataTable value="#{programmerViewController.getProgrammers()}" var="programmer" styleClass="tableList" >
                     <h:column>
-                        <f:facet name="header">Portrait</f:facet>
+                        <f:facet name="header">#{messages['programmers.portrait']}</f:facet>
                         <h:graphicImage styleClass="portrait" alt="Programmer portrait"
                                         value="/api/programmer/#{programmer.uuid}/portrait"/>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Name</f:facet>
+                        <f:facet name="header">#{messages['programmers.name']}</f:facet>
                         <h:outputText value="#{programmer.name}"/>
                     </h:column>
 
                     <h:column>
-                        <f:facet name="header">Programs</f:facet>
-                        <h:link outcome="/programs.xhtml" value="See all">
+                        <f:facet name="header">#{messages['programmers.programs']}</f:facet>
+                        <h:link outcome="/only_user/programs.xhtml" value="#{messages['view']}">
                             <f:param name="author" value="#{programmer.uuid}"/>
                         </h:link>
                     </h:column>
@@ -39,16 +38,16 @@
 <!--                    </h:column>-->
 
                     <h:column>
-                        <f:facet name="header">Delete</f:facet>
+                        <f:facet name="header">#{messages['delete']}</f:facet>
                         <h:form>
-                            <h:commandButton styleClass="btn" value="Delete"
+                            <h:commandButton styleClass="btn" value="#{messages['delete']}"
                                              action="#{programmerViewController.delete(programmer)}"/>
                         </h:form>
                     </h:column>
 
                     <f:facet name="footer">
-                        <h:button styleClass="btn" outcome="programmers.xhtml"
-                                  value="Add new programmer"/>
+                        <h:button styleClass="btn" outcome="only_user/programmers.xhtml"
+                                  value="#{messages['programmers.add']}"/>
                     </f:facet>
                 </h:dataTable>
             </section>

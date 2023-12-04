@@ -1,26 +1,26 @@
 ### Programmers
 GET http://localhost:9080/programming-magic/api/programmer
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 
 ### Programmer
 GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 
 ### Programmer - not existing
 GET http://localhost:9080/programming-magic/api/programmer/12345678-552d-4fc2-8e64-644044d1dcb9
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 
 ### Programmer's portrait
 GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 
 ### Delete portrait
 DELETE http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 
 ### Put portrait
 PUT http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/portrait
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 Content-Type: multipart/form-data; boundary=myboundary
 
 --myboundary
@@ -31,7 +31,7 @@ Content-Disposition: form-data; name="portrait"; filename="shayne.png"
 
 ### Add programmer
 POST http://localhost:9080/programming-magic/api/programmer
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 Content-Type: application/json
 
 {
@@ -43,7 +43,7 @@ Content-Type: application/json
 
 ### Update programmer
 PATCH http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
-Authorization: Basic YWRtaW46YWRtaW5hZG1pbg==
+Authorization: Basic YWRtOmFkbWlu
 Content-Type: application/json
 
 {

@@ -16,7 +16,6 @@ import java.util.UUID;
 
 @LocalBean
 @Stateless
-@Default
 @NoArgsConstructor
 public class UserService implements Service<User> {
 

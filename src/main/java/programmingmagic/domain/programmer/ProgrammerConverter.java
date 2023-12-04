@@ -15,9 +15,9 @@ import java.util.UUID;
 public class ProgrammerConverter implements Converter<Programmer> {
     private ProgrammerService service;
 
-    @EJB
-    public void setProgrammerService(ProgrammerService programmerService) {
-        this.service = programmerService;
+    @Inject
+    public ProgrammerConverter(ProgrammerService service) {
+        this.service = service;
     }
 
     @Override

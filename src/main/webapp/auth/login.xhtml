@@ -6,14 +6,14 @@
 
     <ui:define name="content">
         <article>
-            <header><h2>Login</h2></header>
+            <header><h2>#{messages['nav.login']}</h2></header>
             <section>
                 <h:form>
-                    <h:outputLabel for="username" value="Name:"/>
+                    <h:outputLabel for="username" value="#{messages['login.name']}"/>
                     <h:inputText id="username" name="j_username" type="text" value="#{userViewController.login}"/>
-                    <h:outputLabel for="password" class="form-label" value="Password:"/>
+                    <h:outputLabel for="password" value="#{messages['login.password']}"/>
                     <h:inputSecret id="password" name="j_password" value="#{userViewController.password}"/>
-                    <h:commandButton type="submit" value="Login" action="#{userViewController.signIn()}"/>
+                    <h:commandButton type="submit" value="#{messages['login.submit']}" action="#{userViewController.signIn()}"/>
                 </h:form>
             </section>
         </article>

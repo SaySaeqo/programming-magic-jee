@@ -1,6 +1,7 @@
 package programmingmagic.domain.programmer;
 
 import jakarta.ejb.EJB;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.io.Serializable;
 import java.util.List;
 
-@ViewScoped
+@RequestScoped
 @Named
 @NoArgsConstructor
 public class ProgrammerViewController implements Serializable {

@@ -9,6 +9,7 @@
         <f:viewParam name="programmerUuid" value="#{programViewController.programmerUuid}"/>
         <f:viewParam name="programUuid" value="#{programViewController.programUuid}"/>
         <f:viewAction action="#{programViewController.initProgram()}"/>
+        <f:viewAction action="#{programViewController.initProgrammerForCreate()}"/>
     </f:metadata>
 
     <ui:define name="content">
@@ -16,27 +17,27 @@
             <header>
                 <h1>
                     <h:outputText rendered="#{programViewController.programUuid != null}"
-                                  value="Edit the program #{programViewController.program.name}"/>
+                                  value="#{messages['program_create.title.edit']} #{programViewController.program.name}"/>
                     <h:outputText rendered="#{programViewController.programUuid == null}"
-                                  value="Create a new program with uuid #{programViewController.program.uuid}"/>
+                                  value="#{messages['program_create.title.create']} #{programViewController.program.uuid}"/>
                 </h1>
             </header>
             <section>
                 <h:form styleClass="tableGrid">
-                    <h:outputLabel for="name" value="Name:"/>
+                    <h:outputLabel for="name" value="#{messages['program.name']}"/>
                     <h:inputText id="name" value="#{programViewController.program.name}"/>
-                    <h:outputLabel for="description" value="Description:"/>
+                    <h:outputLabel for="description" value="#{messages['program.description']}"/>
                     <h:inputText id="description" value="#{programViewController.program.description}"/>
-                    <h:outputLabel for="code" value="Code:"/>
+                    <h:outputLabel for="code" value="#{messages['program.code']}"/>
                     <h:inputTextarea id="code" value="#{programViewController.program.code}" style="resize: vertical"/>
-                    <h:outputLabel for="author" value="Author:"/>
+                    <h:outputLabel for="author" value="#{messages['program.author']}"/>
                     <h:selectOneMenu id="author" value="#{programViewController.programmerUuid}">
                         <f:selectItems value="#{programmerViewController.getProgrammers()}" var="programmer"
                                        itemValue="#{programmer.uuid}"
                                        itemLabel="#{programmer.name}" />
                     </h:selectOneMenu>
-                    <h:commandButton value="Save" action="#{programViewController.save()}"/>
-                    <h:commandButton value="Cancel" action="#{programViewController.cancel()}"/>
+                    <h:commandButton value="#{messages['save']}" action="#{programViewController.save()}"/>
+                    <h:commandButton value="#{messages['cancel']}" action="#{programViewController.cancel()}"/>
                 </h:form>
             </section>
         </article>

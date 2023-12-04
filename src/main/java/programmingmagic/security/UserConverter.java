@@ -1,31 +1,34 @@
 package programmingmagic.security;
 
+import jakarta.ejb.EJB;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.FacesConverter;
-import jakarta.inject.Inject;
-import programmingmagic.base.BaseEntityConverter;
+import lombok.NoArgsConstructor;
 
-//@FacesConverter(forClass = User.class, managed = true)
+import java.util.UUID;
+
+@FacesConverter(forClass = User.class, managed = true)
+@NoArgsConstructor
 public class UserConverter  implements Converter<User> {
 
-    private final BaseEntityConverter<UserService, User> converter;
+    private UserService userService;
 
 
-    @Inject
-    public UserConverter(UserService userService) {
-        this.converter = new BaseEntityConverter<>(userService);
+    @EJB
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
 
     @Override
     public User getAsObject(FacesContext context, UIComponent component, String value) {
-        return converter.getAsObject(context, component, value);
+        return value != null ? userService.get(UUID.fromString(value)) : null;
     }
 
     @Override
     public String getAsString(FacesContext context, UIComponent component, User value) {
-        return converter.getAsString(context, component, value);
+        return value != null ? value.getUuid().toString() : "";
     }
 }

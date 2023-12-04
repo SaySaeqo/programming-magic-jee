@@ -1,6 +1,7 @@
 package programmingmagic.domain.program;
 
 import jakarta.ejb.EJB;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 import org.slf4j.Logger;
@@ -12,14 +13,12 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-@ViewScoped
+@RequestScoped
 @Named
 public class ProgramViewController implements Serializable {
 
     Logger log = LoggerFactory.getLogger(this.getClass().getSimpleName());
-    @EJB
     ProgramService programService;
-    @EJB
     ProgrammerService programmerService;
 
     UUID programmerUuid;
@@ -29,20 +28,20 @@ public class ProgramViewController implements Serializable {
 
     public ProgramViewController() {}
 
-//    @EJB
-//    public void setProgramService(ProgramService programService) {
-//        this.programService = programService;
-//    }
-//
-//    @EJB
-//    public void setProgrammerService(ProgrammerService programmerService) {
-//        this.programmerService = programmerService;
-//    }
+    @EJB
+    public void setProgramService(ProgramService programService) {
+        this.programService = programService;
+    }
+
+    @EJB
+    public void setProgrammerService(ProgrammerService programmerService) {
+        this.programmerService = programmerService;
+    }
+
 
     public List<Program> getPrograms() {
-        programmerService.getBaseService().getRepository().getEntityManager().getEntityManagerFactory().getCache().evictAll();
-        programmerService.getBaseService().getRepository().getEntityManager().clear();
-        return programmerUuid != null ? programmerService.getBaseService().get(programmerUuid).getApplications() : programService.getAll();
+        programmerService.clearCache();
+        return programmerUuid != null ? programmerService.get(programmerUuid).getApplications() : programService.getAll();
     }
 
     public void initProgram(){
@@ -51,22 +50,27 @@ public class ProgramViewController implements Serializable {
 
     public void initProgrammer(){
         if (programmerUuid == null) return;
-        programmer = programmerService.getBaseService().get(programmerUuid);
+        programmer = programmerService.get(programmerUuid);
+    }
+
+    public void initProgrammerForCreate(){
+        if (programmerUuid == null) programmerUuid = programmerService.getAll().get(0).getUuid();
+        programmer = programmerService.get(programmerUuid);
     }
 
     public String delete(Program program) {
         programService.delete(program);
-        return "programs?faces-redirect=true";
+        return "only_user/programs?faces-redirect=true";
     }
 
     public String save() {
-        program.setAuthor(programmerService.getBaseService().get(programmerUuid));
+        program.setAuthor(programmerService.get(programmerUuid));
         programService.save(program);
-        return "programs?faces-redirect=true";
+        return "only_user/programs?faces-redirect=true";
     }
 
     public String cancel() {
-        return "programs?faces-redirect=true";
+        return "only_user/programs?faces-redirect=true";
     }
 
     public UUID getProgrammerUuid() {
