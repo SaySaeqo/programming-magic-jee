@@ -1,6 +1,6 @@
+// @no-cookie-jar
 ### Programmers
 GET http://localhost:9080/programming-magic/api/programmer
-Authorization: Basic dXNlcjp1c2Vy
 
 ### Programmer
 GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
@@ -54,7 +54,9 @@ Content-Type: application/json
 }
 
 ### Delete programmer
+// @no-cookie-jar
 DELETE http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
+Authorization: Basic YWRtOmFkbWlu
 
 ### Add programmer's program
 POST http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}/program
@@ -90,5 +92,6 @@ Content-Type: application/json
 DELETE http://localhost:9080/programming-magic/api/program/{{programUuid}}
 
 ### All programs
+// @no-cookie-jar
 GET http://localhost:9080/programming-magic/api/program
 Authorization: Basic dXNlcjp1c2Vy
