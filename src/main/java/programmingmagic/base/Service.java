@@ -1,5 +1,6 @@
 package programmingmagic.base;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ public interface Service<T extends BaseEntity>  extends Serializable {
 
     List<T> getAll();
 
-    T save(@NotNull T entity);
+    T save(@Valid T entity);
 
     void delete(@NotNull T entity);
 }

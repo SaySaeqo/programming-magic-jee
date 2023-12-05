@@ -6,6 +6,7 @@ import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import lombok.NoArgsConstructor;
 import programmingmagic.base.BaseService;
 import programmingmagic.base.Service;
@@ -39,7 +40,7 @@ public class ProgramService implements Service<Program> {
 
     @RolesAllowed(UserRoles.USER)
     @Override
-    public Program save(Program entity) {
+    public Program save(@Valid Program entity) {
         return baseService.save(entity);
     }
 

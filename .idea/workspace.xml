@@ -4,39 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="ejb: działa (security; na byle jak)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/ViewConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_en.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_pl.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/default/img/webicon_en.png" afterDir="false" />
+    <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="jsf-security, i18n">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requests.http" beforeDir="false" afterPath="$PROJECT_DIR$/requests.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseEntityConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/Programmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/Programmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/init/DataStoreInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/init/DataStoreInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/init/InitializeAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/init/InitializeAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/AuthenticationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/AuthenticationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/technology/Technology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/technology/Technology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/liberty/config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/liberty/config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/sass/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/sass/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ibm-web-ext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/ibm-web-ext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/template/main.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/login.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login_error.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth/login_error.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/program.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/program.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/program_create.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/program_create.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/programmers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programmers.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/programs.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programs.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_admin/users.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_pl.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_admin/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_admin/users.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/program.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/program.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/programmers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programmers.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/programs.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programs.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,31 +92,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "temurin-20",
-    "last_opened_file_path": "/home/saysaeqo/javaProjects/programming-magic-4/build",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "rest.client.default.execution.environment": "dev",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/saysaeqo/javaProjects/programming-magic-4/build&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/build" />
@@ -150,7 +141,7 @@
       <recent name="programmingmagic.init" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.programming-magic-4 [war]">
+  <component name="RunManager" selected="Gradle.programming-magic-4 [libertyDev]">
     <configuration name="programming-magic-4 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -265,8 +256,8 @@
       <list>
         <item itemvalue="Gradle.programming-magic-4 [libertyDev]" />
         <item itemvalue="Gradle.programming-magic-4 [war]" />
-        <item itemvalue="Gradle.programming-magic-4 [libertyStop]" />
         <item itemvalue="Gradle.programming-magic-4 [clean]" />
+        <item itemvalue="Gradle.programming-magic-4 [libertyStop]" />
         <item itemvalue="Gradle.programming-magic-4 [compileSass]" />
       </list>
     </recent_temporary>
@@ -320,7 +311,9 @@
       <workItem from="1701625683126" duration="12187000" />
       <workItem from="1701717720710" duration="7196000" />
       <workItem from="1701727234798" duration="120000" />
-      <workItem from="1701727368093" duration="5425000" />
+      <workItem from="1701727368093" duration="5685000" />
+      <workItem from="1701770526736" duration="7239000" />
+      <workItem from="1701779081650" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="servlet">
       <option name="closed" value="true" />
@@ -434,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701639468980</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="jsf-security, i18n">
+      <option name="closed" value="true" />
+      <created>1701733014003</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1701733014003</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +475,8 @@
     <MESSAGE value="ejb: nie działa, okres przed copilotem" />
     <MESSAGE value="ejb: działa (bez security)" />
     <MESSAGE value="ejb: działa (security; na byle jak)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejb: działa (security; na byle jak)" />
+    <MESSAGE value="jsf-security, i18n" />
+    <option name="LAST_COMMIT_MESSAGE" value="jsf-security, i18n" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

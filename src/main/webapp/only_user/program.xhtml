@@ -19,6 +19,10 @@
                 <div class="tableGrid">
                     <div><h:outputText value="UUID:"/></div>
                     <div><h:outputText value="#{programViewController.program.uuid}"/></div>
+                    <div><h:outputText value="#{messages['creationDate']}"/></div>
+                    <div><h:outputText value="#{programViewController.program.entityCreationDate}"/></div>
+                    <div><h:outputText value="#{messages['lastModification']}"/></div>
+                    <div><h:outputText value="#{programViewController.program.entityModificationDate}"/></div>
                     <div><h:outputText value="#{messages['program.name']}"/></div>
                     <div><h:outputText value="#{programViewController.program.name}"/></div>
                     <div><h:outputText value="#{messages['program.description']}"/></div>

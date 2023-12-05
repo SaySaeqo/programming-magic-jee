@@ -1,6 +1,8 @@
 package programmingmagic.base;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import programmingmagic.exception.EntityNotFoundException;
@@ -9,13 +11,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> implements Service<T> {
+public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> {
     private Logger log = LoggerFactory.getLogger(BaseService.class.getSimpleName());
 
-    public R getRepository() {
-        return repository;
-    }
-
+    @Getter
     private R repository;
 
     public BaseService() {}
@@ -34,7 +33,6 @@ public class BaseService<R extends BaseRepository<T>, T extends BaseEntity> impl
         return result;
     }
 
-    @Override
     public List<T> getAll() {
         repository.getEntityManager().getEntityManagerFactory().getCache().evictAll();
         repository.getEntityManager().clear();

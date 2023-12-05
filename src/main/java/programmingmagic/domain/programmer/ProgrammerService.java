@@ -6,6 +6,7 @@ import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.LocalBean;
 import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
@@ -56,7 +57,7 @@ public class ProgrammerService implements Service<Programmer> {
     }
 
     @RolesAllowed(UserRoles.ADMIN)
-    public Programmer save(@NotNull Programmer entity){
+    public Programmer save(@Valid Programmer entity){
         return baseService.save(entity);
     }
 

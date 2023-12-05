@@ -4,6 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.PastOrPresent;
+import lombok.Getter;
 import programmingmagic.base.BaseEntity;
 import programmingmagic.domain.programmer.Programmer;
 import programmingmagic.domain.technology.Technology;
@@ -11,13 +16,16 @@ import programmingmagic.domain.technology.Technology;
 import java.time.LocalDate;
 import java.util.UUID;
 
+@Getter
 @Entity
 public class Program extends BaseEntity {
-    @Id
-    private UUID uuid = UUID.randomUUID();
+
+    @NotBlank
     private String name;
     private String description;
+    @NotBlank
     private String code;
+    @Past(message = "Date of creation cannot be in the future")
     private LocalDate dateOfCreation;
     @ManyToOne
     @JoinColumn(name = "technology_id")
@@ -37,56 +45,29 @@ public class Program extends BaseEntity {
         this.author = author;
     }
 
-    public UUID getUuid() {
-        return uuid;
-    }
 
     public void setUuid(UUID uuid) {
         this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCode() {
-        return code;
     }
 
     public void setCode(String code) {
         this.code = code;
     }
 
-    public LocalDate getDateOfCreation() {
-        return dateOfCreation;
-    }
-
     public void setDateOfCreation(LocalDate dateOfCreation) {
         this.dateOfCreation = dateOfCreation;
     }
 
-    public Technology getUsedTechnology() {
-        return usedTechnology;
-    }
-
     public void setUsedTechnology(Technology usedTechnology) {
         this.usedTechnology = usedTechnology;
-    }
-
-    public Programmer getAuthor() {
-        return author;
     }
 
     public void setAuthor(Programmer author) {

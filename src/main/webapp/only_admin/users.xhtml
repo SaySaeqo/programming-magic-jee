@@ -31,6 +31,17 @@
                   <h:commandButton value="#{messages['delete']}" action="#{userViewController.delete(user)}"/>
                </h:form>
             </h:column>
+
+            <h:column>
+               <f:facet name="header">#{messages['creationDate']}</f:facet>
+               <h:outputText value="#{user.entityCreationDate}"/>
+            </h:column>
+
+            <h:column>
+               <f:facet name="header">#{messages['lastModification']}</f:facet>
+               <h:outputText value="#{user.entityModificationDate}"/>
+            </h:column>
+
          </h:dataTable>
       </article>
    </ui:define>

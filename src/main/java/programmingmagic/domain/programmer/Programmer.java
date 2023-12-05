@@ -22,8 +22,6 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Programmer extends BaseEntity {
 
-    @Id
-    private UUID uuid = UUID.randomUUID();
     private String name;
     private String title;
     private LocalDate birthday;

@@ -11,7 +11,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -19,9 +19,6 @@ import java.util.UUID;
 @Table(name = "app_user")
 public class User extends BaseEntity {
 
-    @Id
-    @Builder.Default
-    private UUID uuid = UUID.randomUUID();
     private String login;
     private String password;
 

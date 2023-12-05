@@ -19,6 +19,10 @@
                 <h:panelGroup layout="block" styleClass="tableGrid" rendered="#{programViewController.programmerUuid != null}">
                     <div><h:outputText value="UUID:"/></div>
                     <div><h:outputText value="#{programViewController.programmer.uuid}"/></div>
+                    <div><h:outputText value="#{messages['creationDate']}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.entityCreationDate}"/></div>
+                    <div><h:outputText value="#{messages['lastModification']}"/></div>
+                    <div><h:outputText value="#{programViewController.programmer.entityModificationDate}"/></div>
                     <div><h:outputText value="#{messages['programmer.name']}"/></div>
                     <div><h:outputText value="#{programViewController.programmer.name}"/></div>
                     <div><h:outputText value="#{messages['programmer.title']}"/></div>
@@ -69,6 +73,16 @@
                         <h:form>
                             <h:commandButton value="#{messages['delete']}" action="#{programViewController.delete(program)}"/>
                         </h:form>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">#{messages['creationDate']}</f:facet>
+                        <h:outputText value="#{program.entityCreationDate}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">#{messages['lastModification']}</f:facet>
+                        <h:outputText value="#{program.entityModificationDate}"/>
                     </h:column>
 
                     <f:facet name="footer">

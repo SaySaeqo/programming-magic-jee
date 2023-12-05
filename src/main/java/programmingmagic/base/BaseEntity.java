@@ -1,18 +1,29 @@
 package programmingmagic.base;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 
-@Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+@MappedSuperclass
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 public abstract class BaseEntity implements Serializable {
     @Id
-    private UUID uuid;
+    @Builder.Default
+    protected UUID uuid = UUID.randomUUID();
 
+    @Builder.Default
+    protected LocalDateTime entityCreationDate = LocalDateTime.now();
+    @Builder.Default
+    protected LocalDateTime entityModificationDate = LocalDateTime.now();
 
     @Override
     public boolean equals(Object o) {

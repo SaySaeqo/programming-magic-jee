@@ -60,17 +60,17 @@ public class ProgramViewController implements Serializable {
 
     public String delete(Program program) {
         programService.delete(program);
-        return "only_user/programs?faces-redirect=true";
+        return "/only_user/programs?faces-redirect=true";
     }
 
     public String save() {
         program.setAuthor(programmerService.get(programmerUuid));
         programService.save(program);
-        return "only_user/programs?faces-redirect=true";
+        return "/only_user/programs?faces-redirect=true";
     }
 
     public String cancel() {
-        return "only_user/programs?faces-redirect=true";
+        return "/only_user/programs?faces-redirect=true";
     }
 
     public UUID getProgrammerUuid() {

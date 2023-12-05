@@ -45,6 +45,16 @@
                         </h:form>
                     </h:column>
 
+                    <h:column>
+                        <f:facet name="header">#{messages['creationDate']}</f:facet>
+                        <h:outputText value="#{programmer.entityCreationDate}"/>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">#{messages['lastModification']}</f:facet>
+                        <h:outputText value="#{programmer.entityModificationDate}"/>
+                    </h:column>
+
                     <f:facet name="footer">
                         <h:button styleClass="btn" outcome="only_user/programmers.xhtml"
                                   value="#{messages['programmers.add']}"/>

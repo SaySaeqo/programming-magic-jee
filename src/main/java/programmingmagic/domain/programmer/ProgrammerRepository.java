@@ -11,6 +11,8 @@ import programmingmagic.base.HttpRequestException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Dependent
@@ -35,6 +37,8 @@ public class ProgrammerRepository extends BaseRepository<Programmer> {
     public void savePortrait(InputStream inputStream, Programmer forProgrammer) {
         try {
             fileSystemController.save(inputStream.readAllBytes(), forProgrammer.getUuid().toString() + ".png");
+            forProgrammer.setEntityModificationDate(LocalDateTime.now());
+            save(forProgrammer);
         } catch (IOException e) {
             throw new HttpRequestException(HttpServletResponse.SC_BAD_REQUEST, "Cannot save image. Try again.\n" +
                     e.getLocalizedMessage() + "\n" +
