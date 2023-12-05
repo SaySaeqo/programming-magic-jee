@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
-@RequestScoped
+@ViewScoped
 @Named
 public class ProgramViewController implements Serializable {
 
@@ -23,7 +23,7 @@ public class ProgramViewController implements Serializable {
 
     UUID programmerUuid;
     UUID programUuid;
-    Program program = new Program(); //?? czemu to jest potrzebne?
+    Program program;// = new Program(); //?? czemu to jest potrzebne?
     Programmer programmer;
 
     public ProgramViewController() {}

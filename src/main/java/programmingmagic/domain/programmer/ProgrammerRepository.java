@@ -4,6 +4,11 @@ import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.ParameterExpression;
+import jakarta.persistence.criteria.Root;
 import jakarta.servlet.http.HttpServletResponse;
 import programmingmagic.FileSystemController;
 import programmingmagic.base.BaseRepository;
@@ -69,9 +74,19 @@ public class ProgrammerRepository extends BaseRepository<Programmer> {
     }
 
     public List<Programmer> findByName(String name) {
-        return entityManager.createQuery("SELECT p FROM Programmer p WHERE p.name = :name")
-                .setParameter("name", name)
-                .getResultList();
+//        return entityManager.createQuery("SELECT p FROM Programmer p WHERE p.name = :name")
+//                .setParameter("name", name)
+//                .getResultList();
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Programmer> q = cb.createQuery(Programmer.class);
+        Root<Programmer> programmer = q.from(Programmer.class);
+
+        ParameterExpression<String> nameParameter = cb.parameter(String.class);
+        q.select(programmer)
+                .where(cb.equal(programmer.get("name"), nameParameter));
+
+        return entityManager.createQuery(q).setParameter(nameParameter, name).getResultList();
+
     }
 }
 

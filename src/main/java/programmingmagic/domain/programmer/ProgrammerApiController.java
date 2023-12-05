@@ -1,5 +1,6 @@
 package programmingmagic.domain.programmer;
 
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.ws.rs.*;
@@ -16,6 +17,7 @@ import java.util.UUID;
 
 
 @Path("programmer")
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
 public class ProgrammerApiController {
 
     private Logger log = LoggerFactory.getLogger(getClass().getSimpleName());
@@ -36,6 +38,7 @@ public class ProgrammerApiController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @RolesAllowed(UserRoles.USER)
     public ProgrammerDto.ProgrammersModel getAllProgrammers(){
         return ProgrammerDto.getStandardInfo(programmerService.getAll());
     }
@@ -71,9 +74,9 @@ public class ProgrammerApiController {
         programmerService.deletePortrait(programmer);
     }
 
+    @RolesAllowed(UserRoles.ADMIN)
     @DELETE
     @Path("{uuid}")
-    @RolesAllowed(UserRoles.ADMIN)
     public void deleteProgrammer(@PathParam("uuid") UUID uuid){
         Programmer programmer = programmerService.get(uuid);
         programmerService.delete(programmer);

@@ -1,6 +1,6 @@
 ### Programmers
 GET http://localhost:9080/programming-magic/api/programmer
-Authorization: Basic YWRtOmFkbWlu
+Authorization: Basic dXNlcjp1c2Vy
 
 ### Programmer
 GET http://localhost:9080/programming-magic/api/programmer/{{programmerUuid}}
@@ -91,3 +91,4 @@ DELETE http://localhost:9080/programming-magic/api/program/{{programUuid}}
 
 ### All programs
 GET http://localhost:9080/programming-magic/api/program
+Authorization: Basic dXNlcjp1c2Vy

@@ -1,6 +1,10 @@
 package programmingmagic.base;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import jakarta.validation.constraints.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,8 +37,14 @@ public class BaseRepository<T extends BaseEntity> {
     }
 
     public List<T> findAll(){
-        String sql = "select x from " + clazz.getSimpleName() + " x";
-        return entityManager.createQuery(sql, clazz).getResultList();
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<T> q = cb.createQuery(clazz);
+        Root<T> root = q.from(clazz);
+
+        q.select(root);
+
+        TypedQuery<T> query = entityManager.createQuery(q);
+        return query.getResultList();
     }
 
     public T findById(UUID uuid){ return entityManager.find(clazz, uuid); }

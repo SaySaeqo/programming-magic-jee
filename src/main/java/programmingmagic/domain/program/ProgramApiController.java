@@ -1,5 +1,6 @@
 package programmingmagic.domain.program;
 
+import jakarta.annotation.security.DeclareRoles;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.ejb.EJB;
 import jakarta.inject.Inject;
@@ -16,6 +17,7 @@ import programmingmagic.security.UserRoles;
 import java.util.UUID;
 
 @Path("program")
+@DeclareRoles({UserRoles.ADMIN, UserRoles.USER})
 @RolesAllowed(UserRoles.USER)
 public class ProgramApiController {
 

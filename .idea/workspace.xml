@@ -4,30 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="jsf-security, i18n">
+    <list default="true" id="fa96ff73-9b05-44cd-8767-99d2f38c4346" name="Changes" comment="validation + modification/creation date">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/http-client.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/http-client.env.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requests.http" beforeDir="false" afterPath="$PROJECT_DIR$/requests.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/base/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/base/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/Programmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/Programmer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programmer/ProgrammerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/programminglanguage/ProgrammingLanguageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/technology/Technology.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/domain/technology/Technology.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/AuthenticationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/AuthenticationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/programmingmagic/security/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/liberty/config/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/liberty/config/server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/messages_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/i18n/messages_pl.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/i18n/messages_pl.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_admin/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_admin/users.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/program.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/program.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/programmers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programmers.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/only_user/programs.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/only_user/programs.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +129,7 @@
       <recent name="programmingmagic.init" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.programming-magic-4 [libertyDev]">
+  <component name="RunManager" selected="HTTP Request.requests | Programmers">
     <configuration name="programming-magic-4 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -154,28 +142,6 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="programming-magic-4 [compileSass]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="compileSass" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,28 +174,6 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="programming-magic-4 [libertyStop]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="libertyStop" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="programming-magic-4 [war]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -252,13 +196,40 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="requests | Delete programmer" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" index="9" requestIdentifier="Delete programmer" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="requests | Programmers" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/requests.http" requestIdentifier="Programmers" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="Remote" nameIsGenerated="true">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="7777" />
+      <option name="AUTO_RESTART" value="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="7777" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.programming-magic-4 [clean]" />
+      <item itemvalue="Gradle.programming-magic-4 [libertyDev]" />
+      <item itemvalue="Gradle.programming-magic-4 [war]" />
+      <item itemvalue="HTTP Request.requests | Delete programmer" />
+      <item itemvalue="HTTP Request.requests | Programmers" />
+      <item itemvalue="Remote JVM Debug.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.requests | Programmers" />
+        <item itemvalue="HTTP Request.requests | Delete programmer" />
         <item itemvalue="Gradle.programming-magic-4 [libertyDev]" />
         <item itemvalue="Gradle.programming-magic-4 [war]" />
         <item itemvalue="Gradle.programming-magic-4 [clean]" />
-        <item itemvalue="Gradle.programming-magic-4 [libertyStop]" />
-        <item itemvalue="Gradle.programming-magic-4 [compileSass]" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +284,7 @@
       <workItem from="1701727234798" duration="120000" />
       <workItem from="1701727368093" duration="5685000" />
       <workItem from="1701770526736" duration="7239000" />
-      <workItem from="1701779081650" duration="319000" />
+      <workItem from="1701779081650" duration="4333000" />
     </task>
     <task id="LOCAL-00001" summary="servlet">
       <option name="closed" value="true" />
@@ -435,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701733014003</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="validation + modification/creation date">
+      <option name="closed" value="true" />
+      <created>1701779416934</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701779416934</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +455,39 @@
     <MESSAGE value="ejb: działa (bez security)" />
     <MESSAGE value="ejb: działa (security; na byle jak)" />
     <MESSAGE value="jsf-security, i18n" />
-    <option name="LAST_COMMIT_MESSAGE" value="jsf-security, i18n" />
+    <MESSAGE value="validation + modification/creation date" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation + modification/creation date" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/programmingmagic/base/BaseRepository.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramService.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/programmingmagic/domain/program/ProgramViewController.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

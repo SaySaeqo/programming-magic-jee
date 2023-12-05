@@ -27,9 +27,15 @@ public class UserRepository extends BaseRepository<User> {
 
     public User findByLogin(String login) {
         try {
-            return entityManager.createQuery("select u from User u where u.login = :login", User.class)
-                    .setParameter("login", login)
-                    .getSingleResult();
+            CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+            CriteriaQuery<User> q = cb.createQuery(User.class);
+            Root<User> user = q.from(User.class);
+
+            ParameterExpression<String> loginParameter = cb.parameter(String.class);
+            q.select(user)
+                    .where(cb.equal(user.get("login"), loginParameter));
+
+            return entityManager.createQuery(q).setParameter(loginParameter,login).getSingleResult();
         } catch (NoResultException e) {
             return null;
         }
