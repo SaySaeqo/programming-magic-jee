@@ -1,0 +1,91 @@
+html, body {
+  background: azure;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  font-family: Arial, ui-serif;
+  margin: 0;
+}
+html > header, html > nav, html > footer, body > header, body > nav, body > footer {
+  display: flex;
+  align-items: center;
+  background: white;
+}
+html > header .webtitle, body > header .webtitle {
+  flex: 1;
+  font-size: 2em;
+  font-weight: bold;
+}
+html > header img, body > header img {
+  width: 3em;
+  padding: 0 1.5em;
+}
+html > header .logged, body > header .logged {
+  display: flex;
+  gap: 1em;
+  padding: 0 1.5em;
+}
+html > nav, body > nav {
+  display: flex;
+}
+html > nav ul, body > nav ul {
+  display: flex;
+  flex: 1;
+  list-style: none;
+  margin: 0 1.5em;
+  padding: 0;
+}
+html > nav li, body > nav li {
+  display: flex;
+}
+html > nav a, body > nav a {
+  text-decoration: none;
+  padding: 0 3em;
+  flex: 1;
+}
+html > nav li:hover, body > nav li:hover {
+  background: aqua;
+}
+html > main, body > main {
+  flex: 1;
+  flex-direction: column;
+}
+html > main article, html > main header, html > main section, body > main article, body > main header, body > main section {
+  padding: 0 2em;
+  border: 0.1em solid black;
+  border-radius: 4em;
+}
+html > main section, body > main section {
+  padding: 1em 2em;
+}
+html > footer, body > footer {
+  justify-content: center;
+}
+
+img.portrait {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  object-position: top;
+  object-fit: cover;
+}
+
+.code {
+  background: #d0e8e8;
+  padding: 1em;
+  border-radius: 0.5em;
+  font-family: monospace;
+  white-space: pre;
+}
+
+.tableList td, .tableList th {
+  padding: 0.5em;
+}
+
+.tableGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../../../sass/main.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAIA;EACE,YALM;EAMN;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAKA;EACI;EACA;EACA;;AAEJ;EACE;EACA;;AAEF;EACE;EACA;EACA;;AAIJ;EACE;;AACA;EACE;EACA;EACA;EACA;EACA;;AAEF;EACE;;AAEF;EACE;EACA;EACA;;AAEF;EACE,YArDK;;AA0DT;EACE;EACA;;AAEA;EACE;EACA;EACA;;AAGF;EACE;;AAKJ;EACE;;;AAKJ;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE,YA1FQ;EA2FR;EACA;EACA;EACA;;;AAIA;EACE;;;AAIJ;EACI;EACA%22,%22file%22:%22main.css%22%7D */

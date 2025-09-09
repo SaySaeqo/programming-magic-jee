@@ -106,7 +106,7 @@ public class DataStoreInitializer {
         save(programmer5);
 
 
-        String projectDir = "/home/saysaeqo/javaProjects/programming-magic-4";
+        String projectDir = "/home/saysaeqo/programming-magic-jee";
         String testSubDir = "src/main/resources/pl/edu/pg/eti/kask/s180171/programmingmagic/portrait";
         String fullPath = Paths.get (projectDir,testSubDir).toString();
 
@@ -147,7 +147,7 @@ public class DataStoreInitializer {
                 UUID programmerUuid = programmerService.getByName(programmerName).getUuid();
                 if (programmerUuid != null) portraits.put(programmerUuid, fileContent);
             } catch (Exception ignored) {
-                log.error(String.format("Programmer with name %s not found", programmerName));
+                log.warn(String.format("Programmer with name %s not found", programmerName));
             }
         }
         FileSystemController fsc = new FileSystemController();

@@ -6,7 +6,7 @@
          metadata-complete="false">
     <context-param>
         <param-name>imagesPath</param-name>
-        <param-value>/home/saysaeqo/javaProjects/programming-magic-4/portraits</param-value>
+        <param-value>/home/saysaeqo/programming-magic-jee/portraits</param-value>
     </context-param>
 
     <context-param>
